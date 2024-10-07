@@ -1,0 +1,38 @@
+footer{
+    position: fixed;
+    width: 100%;
+    left: 0 ;
+    bottom: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 12px;
+    justify-content: space-around;
+    display: flex;
+    font-size: 22px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.made-by{
+    list-style: none;
+    font-family: "Kanit", sans-serif;
+    font-size: 18px;
+    font-weight: 250;
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    color: #3399ff;
+}
+@media only screen and (max-width: 768px){
+    footer{
+        display: block;
+        padding: 5px;
+    }
+    .made-by{
+        display: block;
+    }
+}
