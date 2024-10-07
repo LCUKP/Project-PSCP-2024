@@ -19,6 +19,7 @@ footer{
     font-size: 18px;
     font-weight: 250;
     font-style: normal;
+    padding-right: 10px;
 }
 a{
     text-decoration: none;
@@ -31,8 +32,10 @@ a:hover{
     footer{
         display: block;
         padding: 5px;
+        font-size: 18px;
     }
     .made-by{
         display: block;
+        font-size: 14px;
     }
 }
