@@ -113,6 +113,14 @@
 .navbar-nav {
   display: flex;
 }
+.brand {
+  color: #007bff;
+  font-weight: bold;
+}
+a{
+  text-decoration: none;
+}
+
 .login-btn {
   align-self: flex-end;
   background-color: #007bff;
