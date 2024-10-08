@@ -4,14 +4,18 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="kanit-regular">{{all_user}}</h1>
-    <h1 class="kanit-regular">{{user2}}</h1>
-    {% for user in all_user %}
-    <hr>
-    <p class="kanit-regular">{{user.userid}}</p>
-    <p class="kanit-regular">{{user.username}}</p>
-    <p class="kanit-regular">{{user.lasstname}}</p>
-    <p class="kanit-regular">{{user.password}}</p>
-    <hr>
-    {% endfor %}
+    <div class="container">
+        <div class="item">
+            <h1 class="kanit-regular">{{all_user}}</h1>
+            <h1 class="kanit-regular">{{user2}}</h1>
+            {% for user in all_user %}
+            <hr>
+            <p class="kanit-regular">{{user.userid}}</p>
+            <p class="kanit-regular">{{user.username}}</p>
+            <p class="kanit-regular">{{user.lasstname}}</p>
+            <p class="kanit-regular">{{user.password}}</p>
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
