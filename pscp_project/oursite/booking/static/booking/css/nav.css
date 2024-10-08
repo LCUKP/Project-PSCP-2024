@@ -168,12 +168,12 @@ a{
     transform: scale(1.1);
 }
 .link{
-    z-index: 99999999999;
-    margin-right: 60px;
-    display: none;
-    justify-content: flex-end;
-    transition: opacity 0.3s ease;
-    position: absolute;
+  z-index: 99999999999;
+  margin-right: 60px;
+  display: none;
+  justify-content: flex-end;
+  transition: opacity 0.3s ease;
+  position: absolute;
   left: 80%;
   top: 10%;
 }
@@ -289,3 +289,36 @@ input[type=password]:focus{
 }
 
 /*Responsive nav*/
+@media only screen and (max-width: 1200px) { /*Tablet*/
+  .link{
+    left: 71%;
+    top: 7%;
+  }
+}
+
+@media only screen and (max-width: 600px) { /*Mobile*/
+  .link{
+    left: 40%;
+    top: 7%;
+  }
+  .brand{
+    font-size: 22px;
+    margin: 0;
+  }
+  .nav{
+    position: absolute;
+    width: 100%;
+  }
+  .menu{
+    margin: 0;
+  }
+  .login{
+    font-size: 13px;
+    height: 27px;
+    width: 60px;
+  }
+  .nav img{
+    height: 30px;
+    width: 30px;
+  }
+}
