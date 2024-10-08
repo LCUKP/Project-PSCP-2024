@@ -1,4 +1,3 @@
-
 const menuIcon = document.getElementById('menu-icon');
 const menuImg = document.getElementById('menu-img');
 const navLinks = document.getElementById('nav-links');
@@ -13,4 +12,3 @@ menuIcon.addEventListener('click', function() {
         menuImg.classList.add('rotate');
     }
 });
-

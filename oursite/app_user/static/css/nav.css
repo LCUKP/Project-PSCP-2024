@@ -1,6 +1,9 @@
 *{
     margin: 0;
+<<<<<<< HEAD:pscp_project/oursite/booking/static/booking/css/nav.css
     font-family: "Kanit", sans-serif;
+=======
+>>>>>>> b601049ebbd966fc822e44ba6cbe007b522284d8:oursite/app_user/static/css/nav.css
 }
 .kanit-thin {
     font-family: "Kanit", sans-serif;
@@ -117,8 +120,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD:pscp_project/oursite/booking/static/booking/css/nav.css
     position: fixed;
     width: 100%;
+=======
+>>>>>>> b601049ebbd966fc822e44ba6cbe007b522284d8:oursite/app_user/static/css/nav.css
 }
 
 .brand {
@@ -148,10 +154,13 @@ a{
 .nav img{
     height: 45px;
     margin-left: 10px;
+<<<<<<< HEAD:pscp_project/oursite/booking/static/booking/css/nav.css
     transition: transform 0.3s ease;
 }
 .nav img.rotate{
   transform: rotate(90deg);
+=======
+>>>>>>> b601049ebbd966fc822e44ba6cbe007b522284d8:oursite/app_user/static/css/nav.css
 }
 .menu{
     display: flex;
@@ -166,6 +175,7 @@ a{
 }
 .brand:hover{
     transform: scale(1.1);
+<<<<<<< HEAD:pscp_project/oursite/booking/static/booking/css/nav.css
 }
 .link{
     z-index: 99999999999;
@@ -289,3 +299,6 @@ input[type=password]:focus{
 }
 
 /*Responsive nav*/
+=======
+}
+>>>>>>> b601049ebbd966fc822e44ba6cbe007b522284d8:oursite/app_user/static/css/nav.css

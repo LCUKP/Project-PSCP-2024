@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {% endblock %}
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+</body>
+    <nav class="kanit-regular">
+        <div class="nav">
+        <a class="brand" href="#"><h3>จองห้อง</h3></a>
+        <div class="menu"><button class="login">Log in</button>
+        <a href="#"><img src="../static/icon/menu.png" alt="Menu"></img></a></div></div>
+        <div class="link">
+            <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <span class="make-thing">Make things easier</span>
+        <span class="made-by">Made with ❤ by 
+            <a href="#">@LCUKP</a> &
+            <a href="#">@F1wzu</a> &
+            <a href="#">@jjugumi</a> &
+            <a href="#">@Wirayabovorn007</a>
+        </span>
+        </ul>
+    </footer>
+</html>
