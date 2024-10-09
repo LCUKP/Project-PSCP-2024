@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from app_user.models import user
+from app_admin.models import admin as assmin
 
 # Create your views here.
 def index(request) :
@@ -15,7 +16,8 @@ def booking(request) :
     return render(request,"booking.html")
 
 def contact(request) :
-    return render(request,"contact.html")
+    admins = assmin.objects.all()
+    return render(request,"contact.html",{"admins":admins})
 
 def report(request) :
     return render(request,"report.html")

@@ -1,0 +1,32 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    padding: 5px;
+    /* border-style: solid; */
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.admin-img {
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-size: 150px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    border-radius: 0.5em;
+    background-color: black;
+}
