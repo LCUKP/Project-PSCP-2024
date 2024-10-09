@@ -108,6 +108,7 @@ a{
   left: 50%;
   top: 10%;
   transform: translateX(-50%);
+  z-index: 200000;
 }
 
 form{
@@ -176,6 +177,7 @@ input[type=password]:focus{
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 10000;
 }
 .overlay:target {
   visibility: visible;
