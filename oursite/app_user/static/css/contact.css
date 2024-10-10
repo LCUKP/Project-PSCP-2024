@@ -30,3 +30,9 @@ a {
     border-radius: 0.5em;
     background-color: black;
 }
+
+@media only screen and (max-width: 768px){
+    .container{
+        margin-bottom: 1050px;
+    }
+}
