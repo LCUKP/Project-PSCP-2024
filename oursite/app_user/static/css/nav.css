@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
     width: 100%;
 }
 
@@ -67,7 +67,7 @@ a{
   display: none;
   justify-content: flex-end;
   transition: opacity 0.3s ease;
-  position: absolute;
+  position: fixed;
   left: 80%;
   top: 10%;
 }
@@ -186,6 +186,9 @@ input[type=password]:focus{
 
 /*Responsive nav*/
 @media only screen and (max-width: 1200px) { /*Tablet*/
+  .nav{
+    top: 0;
+  }
   .link{
     left: 71%;
     top: 7%;
@@ -194,7 +197,7 @@ input[type=password]:focus{
 
 @media only screen and (max-width: 768px) { /*Mobile*/
   .link{
-    left: 40%;
+    left: 70%;
     top: 7%;
   }
   .brand{
@@ -202,7 +205,7 @@ input[type=password]:focus{
     margin: 0;
   }
   .nav{
-    position: sticky;
+    top: 0;
     width: 100%;
   }
   .menu{
@@ -216,5 +219,12 @@ input[type=password]:focus{
   .nav img{
     height: 30px;
     width: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) { /*Smaller Mobile Size*/
+  .link{
+    left: 50%;
+    top: 7%;
   }
 }

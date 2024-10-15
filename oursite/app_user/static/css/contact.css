@@ -1,3 +1,10 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    padding-top: 150px;
+}
+
 .card {
     display: flex;
     flex-direction: column;
