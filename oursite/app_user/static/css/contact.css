@@ -34,9 +34,22 @@ a {
 }
 
 .btn {
-    border-radius: 0.5em;
-    background-color: black;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 15px;
+    font-size: 15px;
+    background-color: #007bff;
+    margin-top: 10px;
+    color: white;
+    transition: 0.3s;
+    border: none;
 }
+.btn:hover{
+    border: 0.5px solid;
+    background-color: transparent;
+    border-color: #007bff;
+    color: #007bff;
+  }
 
 @media only screen and (max-width: 768px){
     .container{
