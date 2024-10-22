@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+{% block title %}
+<title>Category</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="item">
+            <h1 class="kanit-regular">booking</h1>
+        </div>
+        <div class="item">
+            <form method = "post" action = "catname">
+                {% csrf_token %}
+                <label for="fname">Category Name :</label>
+                <input type="text"  name="catname" ><br>
+                <label for="permission">Permission :</label>
+                <input type="radio" name="permission"><br>
+                <input type="submit" value="บันทึก">
+            </form>
+        </div>
+    </div>
+{% endblock %}
