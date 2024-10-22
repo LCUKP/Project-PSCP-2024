@@ -127,12 +127,11 @@ form input{
   border-bottom: 0.5px solid #007bff;
 }
 .popup-login .close{
-  font-size: 2rem;
+  font-size: 2.5rem;
   color:  rgb(123, 123, 123);
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 20px;
+  right: 10%;
+  top: 0;
 }
 input[type=text]:focus{
   outline: none;
@@ -198,10 +197,13 @@ input[type=password]:focus{
   }
 }
 
-@media only screen and (max-width: 768px) { /*Mobile*/
+@media only screen and (max-width: 767px) { /*Mobile*/
   .link{
     left: 70%;
     top: 7%;
+  }
+  .popup-login{
+    width: 300px;
   }
   .brand{
     font-size: 22px;

@@ -27,3 +27,11 @@ class faculty(models.Model) :
     
     def __str__(self) :
         return  str(self.facid)+ " " + self.facname
+    
+class major(models.Model) :
+    majorid = models.AutoField(primary_key=True)
+    majorname = models.CharField(max_length=200)
+    facid = models.ForeignKey(faculty,on_delete=models.CASCADE)
+    
+    def __str__(self) :
+        return  str(self.majorid)+ " " + self.majorname
