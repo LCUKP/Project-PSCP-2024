@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from app_user.models import user
+from app_user.models import user,faculty
 from app_admin.models import admin as assmin
 
 # Create your views here.
@@ -23,4 +23,5 @@ def report(request) :
     return render(request,"report.html")
 
 def register(request) :
-    return render(request,"forms/register.html")
+    all_faculty = faculty.objects.all()
+    return render(request,"forms/register.html",{"all_faculty":all_faculty})
