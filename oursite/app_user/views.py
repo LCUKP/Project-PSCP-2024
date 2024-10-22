@@ -21,3 +21,6 @@ def contact(request) :
 
 def report(request) :
     return render(request,"report.html")
+
+def register(request) :
+    return render(request,"forms/register.html")
