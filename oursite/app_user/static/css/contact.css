@@ -1,10 +1,6 @@
 *{
     box-sizing: border-box;
 }
-.container{
-    padding-top: 150px;
-    padding-bottom: 200px;
-}
 
 .card {
     display: flex;
@@ -34,26 +30,19 @@ a {
     color: white;
 }
 
-.btn {
+.btn-contact {
     cursor: pointer;
-    width: 100px;
+    padding: 5px 10px;
     border-radius: 15px;
-    font-size: 15px;
+    font-size: 13px;
     background-color: #007bff;
-    margin-top: 10px;
     color: white;
     transition: 0.3s;
     border: none;
 }
-.btn:hover{
+.btn-contact:hover{
     border: 0.5px solid;
     background-color: transparent;
     border-color: #007bff;
     color: #007bff;
   }
-
-@media only screen and (max-width: 768px){
-    .container{
-        margin-bottom: 1050px;
-    }
-}
