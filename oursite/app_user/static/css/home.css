@@ -302,7 +302,7 @@ button:hover{
         border-radius: 2rem;
     }
     #background-text{
-        font-size: 100px;
+        font-size: 80px;
         z-index: -9999;
         bottom: 30%;
         right: 1%;
