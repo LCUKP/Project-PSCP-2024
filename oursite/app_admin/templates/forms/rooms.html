@@ -1,0 +1,40 @@
+{% extends "00-base.html" %}
+
+{% block title %}
+<title>Rooms</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form class="addroom" method="post" action="rooms">
+        <h1>เพิ่มห้อง</h1>
+        <div class="input-box">
+            <span class="input-label">ชื่อห้อง</span><br>
+            <input class="input-value" type="text" name="roomname">
+        </div>
+        <div class="input-box">
+            <span class="input-label">หมวดหมู่</span><br>
+            <input class="input-value" type="text" name="cate">
+        </div>
+        <div class="input-box">
+            <span class="input-label">จำนวนห้อง</span><br>
+            <input class="input-value" type="text" name="roomnum">
+        </div>
+        <div class="input-box">
+            <span class="input-label">เวลาเปิด-ปิด</span><br>
+            <input class="input-value" type="text" name="timelen">
+        </div>
+        <div class="input-box">
+            <span class="input-label">อัพโหลดรูปภาพ</span><br>
+            <input class="input-img" type="file" name="uploadimg" style="width:200px">
+        </div>
+        <div class="input-box">
+            <span class="input-label">หมายเหตุ</span><br>
+            <textarea></textarea>
+        </div>
+        <div class=".pad-but">
+            <button id="submitbt">บันทึก</button><button id="cancelbt">ยกเลิก</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+h1{
+    padding-bottom: 15px;
+    color: #007bff;
+    text-align: center;
+}
+.addroom .input-value{
+    transition: 0.3s;
+    width: 400px;
+    height: 40px;
+    border: none;
+    background-color: rgb(235, 235, 235);
+    border-bottom: 0.5px solid #007bff;
+}
+input[type=file]{
+    background-color: transparent;
+    width: auto;
+}
+.input-label{
+    color: #007bff;
+    font-size: 24px;
+    font-weight: 500;
+}
+.input-box{
+    padding-bottom: 10px;
+}
+button{
+    width: 45%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+    border-radius: 12px;
+    border-style: none;
+    color: #fff;
+    cursor: pointer;
+}
+#submitbt{
+    background-color: #1ac93a;
+}
+#submitbt:hover{
+    background-color: transparent;
+    color: #1ac93a;
+    border-style: solid;
+    border-color: #1ac93a;
+}
+#cancelbt{
+    background-color: #e91111;
+}
+#cancelbt:hover{
+    background-color: transparent;
+    color: #e91111;
+    border-style: solid;
+    border-color: #e91111;
+}
+.pad-but{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+textarea{
+    display: block;
+}
