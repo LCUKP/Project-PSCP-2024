@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Register</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="kanit-regular">Register</h1>
+        <div class="item">
+            <form>
+                <form method = "post" action = "catname">
+                    {% csrf_token %}
+                    <label for="username">username :</label>
+                    <input type="text"  name="username"><br>
+                    <label for="name">name :</label>
+                    <input type="text" name="name"><br>
+                    <label for="lastname">lastname :</label>
+                    <input type="text" name="lastname"><br>
+                    <label for="password">password :</label>
+                    <input type="text" name="password"><br>
+                    <label for="fac id">faculty id:</label>
+                    <select>
+                        {% for faculty in all_faculty %}
+                        <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
+                        {% endfor %}
+                    </select><br>
+                    <label for="major"> major :</label>
+                    <input type="text" name="major"><br>
+                    <input type="submit" value="บันทึก">
+                </form>
+        </div>
+    </div>
+{% endblock %}
