@@ -46,3 +46,9 @@ a {
     border-color: #007bff;
     color: #007bff;
   }
+
+  @media only screen and (max-width: 768px){
+    .card:last-child{
+        margin-bottom: 200px;
+    }
+  }
