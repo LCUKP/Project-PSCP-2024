@@ -6,8 +6,7 @@ from app_admin.models import admin_acc
 # Create your views here.
 def index(request) :
     all_user = user.objects.all()
-    user2 = user.objects.filter(userid = 2)
-    return render(request,"index.html",{"all_user":all_user,"user2":user2})
+    return render(request,"index.html",{"all_user":all_user})
 
 def profile(request) :
     return render(request,"profile.html")
