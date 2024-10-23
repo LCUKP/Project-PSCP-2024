@@ -13,6 +13,40 @@
     flex-wrap: wrap-reverse;
     align-items: center;
 }
+input:focus{
+    outline: none;
+}
+input[type="text"]:focus{
+    background-color: rgb(247, 247, 247);
+}
+input[type="number"]:focus{
+    background-color: rgb(247, 247, 247);
+}
+input[type="number"]{
+    text-align: center;
+}
+option{
+    color: #007bff;
+    font-size: 16px;
+}
+
+select:focus{
+    outline: none;
+}
+
+input[type=file]{
+    background-color: transparent;
+    width: auto;
+    cursor: pointer;
+    color: rgb(191, 191, 191);
+}
+input[type=file]::-webkit-file-upload-button{
+    display: none;
+}
+input[type=file]::before{
+    content: 'อัพโหลดรูป  ';
+    color: #007bff;
+}
 
 @media only screen and (max-width: 768px){
     .item{

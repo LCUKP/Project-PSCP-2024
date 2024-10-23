@@ -9,32 +9,43 @@
     <form class="addroom" method="post" action="rooms">
         <h1>เพิ่มห้อง</h1>
         <div class="input-box">
+            <div>
             <span class="input-label">ชื่อห้อง</span><br>
             <input class="input-value" type="text" name="roomname">
-        </div>
-        <div class="input-box">
+            </div><br>
+            <div>
             <span class="input-label">หมวดหมู่</span><br>
-            <input class="input-value" type="text" name="cate">
+            <select name="Catagory" id="" class="catagory-select">
+                <option value="null"></option>
+                <option value="Creative Room">Creative Room</option>
+                <option value="Laboratory Room">Laboratory Room</option>
+                <option value="Lecture Room">Lecture Room</option>
+                <option value="Project Base Room">Project Base Room</option>
+              </select>
+            </div>
         </div>
+        <div class="input-box"><div>
+            <span class="input-label">จำนวนห้อง</span><br><div class="pos">
+            <input class="input-value" type="number" min="1" name="roomnum"><p class="input-label">ห้อง</p></div>
+        </div><br>
+        <div>
+            <span class="input-label">เวลาเปิด-ปิด</span><br><div class="pos">
+                <input type="number" min="0" class="input-time"><p style="font-size:20px; color: #007bff;">:</p><input type="number" min="0" class="input-time">
+              <p style="font-size:20px; color: #007bff; margin: 0px 5px;">ถึง</p>
+              <input type="number" min="0" class="input-time"><p style="font-size:20px; color: #007bff;">:</p><input type="number" min="0" class="input-time">
+   </div>
+        </div></div><br>
+
         <div class="input-box">
-            <span class="input-label">จำนวนห้อง</span><br>
-            <input class="input-value" type="text" name="roomnum">
-        </div>
-        <div class="input-box">
-            <span class="input-label">เวลาเปิด-ปิด</span><br>
-            <input class="input-value" type="text" name="timelen">
-        </div>
-        <div class="input-box">
-            <span class="input-label">อัพโหลดรูปภาพ</span><br>
-            <input class="input-img" type="file" name="uploadimg" style="width:200px">
-        </div>
-        <div class="input-box">
-            <span class="input-label">หมายเหตุ</span><br>
-            <textarea></textarea>
-        </div>
-        <div class=".pad-but">
-            <button id="submitbt">บันทึก</button><button id="cancelbt">ยกเลิก</button>
+            <input class="input-label" type="file" name="Upload file"><br><br>
+            <div>
+                <span class="input-label">หมายเหตุ</span><br>
+                <textarea class="annotation" name="note"></textarea>
+            </div>
         </div>
     </form>
+    <div class="pad-but">
+        <button id="submitbt">บันทึก</button><button id="cancelbt">ยกเลิก</button>
+    </div>
 </div>
 {% endblock %}
