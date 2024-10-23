@@ -25,3 +25,6 @@ def report(request) :
 def register(request) :
     all_faculty = faculty.objects.all()
     return render(request,"forms/register.html",{"all_faculty":all_faculty})
+
+def calendar(request) :
+    return render(request,"forms/calendar.html")
