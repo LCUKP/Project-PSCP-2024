@@ -6,56 +6,165 @@ h1{
 .addroom .input-value{
     transition: 0.3s;
     width: 400px;
-    height: 40px;
-    border: none;
-    background-color: rgb(235, 235, 235);
-    border-bottom: 0.5px solid #007bff;
-}
-input[type=file]{
+    height: 60px;
+    font-size: 18px;
     background-color: transparent;
-    width: auto;
+    border: 0.5px solid #007bff;
+    border-radius: 5px;
+}
+
+.pos{
+    display: flex;
+    align-items: center;
 }
 .input-label{
+    text-align: left;
     color: #007bff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
 }
 .input-box{
     padding-bottom: 10px;
+    float: left;
 }
-button{
-    width: 45%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 24px;
-    border-radius: 12px;
-    border-style: none;
-    color: #fff;
-    cursor: pointer;
+.input-box input,select,textarea{
+    margin: 10px;
 }
 #submitbt{
+    cursor: pointer;
+    transition: 0.3s;
+    border-color: transparent;
+    color: white;
+    width: 150px;
+    font-size: 20px;
+    padding: 15px 30px;
     background-color: #1ac93a;
+    margin-right: 5px;
+    padding: 15px;
 }
 #submitbt:hover{
     background-color: transparent;
     color: #1ac93a;
-    border-style: solid;
+    border: 0.5px solid;
     border-color: #1ac93a;
 }
 #cancelbt{
+    cursor: pointer;
+    border-color: transparent;
+    color: white;
+    transition: 0.3s;
+    width: 150px;
+    padding: 15px 30px;
+    font-size: 20px;
     background-color: #e91111;
 }
 #cancelbt:hover{
     background-color: transparent;
     color: #e91111;
-    border-style: solid;
+    border: 0.5px solid;
     border-color: #e91111;
 }
 .pad-but{
+    margin-top: 30px;
     display: flex;
-    justify-content: space-around;
-    padding-top: 20px;
 }
 textarea{
     display: block;
+    resize: none;
+}
+textarea:focus{
+    outline: none;
+    background-color: rgb(247, 247, 247);
+}
+.input-box input[type="number"]{
+    width: 70px;
+}
+.catagory-select{
+    cursor: pointer;
+    transition: 0.3s;
+    width: 380px;
+    height: 60px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0.5px solid #007bff;
+    border-radius: 5px;
+}
+
+.annotation{
+    transition: 0.3s;
+    width: 600px;
+    height: 90px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0.5px solid #007bff;
+    border-radius: 5px;
+}
+.input-time{
+    cursor: pointer;
+    transition: 0.3s;
+    height: 60px;
+    font-size: 18px;
+    border: none;
+    margin: 0;
+    border-bottom: 0.5px solid #007bff;
+}
+
+
+
+/*Responsive*/
+@media only screen and (max-width:1200px){
+    .addroom .input-value{
+        width: 350px;
+    }
+    .catagory-select{
+        width: 320px;
+    }
+    .catagory-select option{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .addroom .input-value{
+        width: 250px;
+    }
+    .catagory-select{
+        width: 220px;
+    }
+    .catagory-select option{
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .addroom .input-value{
+        width: 370px;
+    }
+    .catagory-select{
+        width: 370px;
+    }
+    .catagory-select option{
+        font-size: 9px;
+    }
+    .input-box textarea{
+        width: 370px;
+    }
+    .input-box input, select, textarea {
+        margin: 5px;
+    }
+    .input-box{
+        justify-content: center;
+        width: 300px;
+    }
+    .addroom{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .pad-but{
+        margin-left: 18%;
+    }
+    h1{
+        margin-left: 25%;
+    }
 }

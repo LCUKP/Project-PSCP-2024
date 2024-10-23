@@ -114,10 +114,10 @@ a{
   z-index: 2000000000;
 }
 
-form{
+.popup-login form{
   text-align: center;
 }
-form input{
+.popup-login input{
   transition: 0.3s;
   width: 240px;
   height: 40px;
@@ -133,11 +133,11 @@ form input{
   right: 10%;
   top: 0;
 }
-input[type=text]:focus{
+.popup-login input[type=text]:focus{
   outline: none;
   background-color: rgb(221, 221, 221);
 }
-input[type=password]:focus{
+.popup-login input[type=password]:focus{
   outline: none;
   background-color: rgb(221, 221, 221);
 }
