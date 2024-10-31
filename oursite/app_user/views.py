@@ -49,5 +49,15 @@ def register(request) :
 
 def calendar(request) :
     return render(request,"forms/calendar.html")
+
 def login(request) :
     pass
+
+def test(request) :
+    return render(request,"forms/test.html")
+
+def test_register(request):
+    if request.method == 'POST':
+        return HttpResponse("Received POST request!")
+    elif request.method == 'GET':
+        return HttpResponse("Not a POST request")
