@@ -7,10 +7,10 @@
     <div class="container">
         <h1 style="font-weight: bold; text-align: center;">Register</h1>
         <img src="../static/icon/pfp.png" alt="Upload" id="uploadImage" class="upload-image">
-        <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" >
         <div class="item">
             <form method = "post" action="register" enctype="multipart/form-data">
                 {% csrf_token %}
+                <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" >
                 <div class="input-box">
 
 
