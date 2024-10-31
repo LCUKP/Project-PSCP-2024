@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from app_user.models import user,faculty
+from app_user.models import user,faculty,major
 from app_admin.models import admin_acc
 
 # Create your views here.
@@ -23,6 +23,7 @@ def report(request) :
 
 def register(request) :
     all_faculty = faculty.objects.all()
+    all_major = major.objects.all()
     if request.method == "POST":
         username = request.POST["username"]
         studentid = request.POST["code"]
@@ -31,23 +32,35 @@ def register(request) :
         password = request.POST["password"]
         facultys = request.POST["faculty"]
         img = request.FILES["img"]
-        major = request.POST["major"]
+        majors = request.POST["major"]
         User = user.objects.create(
             code = studentid,
             username = username,
             name = name,
             lastname = lastname,
             password = password,
-            faculty = facultys,
+            faculty = faculty.objects.get(facid=facultys),
             img = img,
-            major = major
+            major = major.objects.get(id=majors),
         )
         User.save()
-        return redirect('')
-    return render(request,"forms/register.html",{"all_faculty":all_faculty})
+        return redirect('/#popup')
+    return render(request,"forms/register.html",{"all_faculty":all_faculty,"all_major":all_major})
 
 def calendar(request) :
     return render(request,"forms/calendar.html")
 
+def login(request) :
+    pass
+
 def time(request):
     return render(request,"forms/time.html")
+
+def test(request) :
+    return render(request,"forms/test.html")
+
+def test_register(request):
+    if request.method == 'POST':
+        return HttpResponse("Received POST request!")
+    elif request.method == 'GET':
+        return HttpResponse("Not a POST request")
