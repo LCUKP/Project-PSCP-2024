@@ -5,40 +5,57 @@
 
 {% block content %}
     <div class="container">
-        <h1 style="font-weight: bold; text-align: center;">Register</h1>
+        <h1 style="font-weight: bold; text-align: center;">Sign up</h1>
         <img src="../static/icon/pfp.png" alt="Upload" id="uploadImage" class="upload-image">
-        <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" >
+       
         <div class="item">
-            <form method = "post" action="register" enctype="multipart/form-data">
+            <form method = "post" action="register" enctype="multipart/form-data" class="addroom">
                 {% csrf_token %}
-                <div class="input-box">
+                <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" >
 
-
-
-                <label for="username" class="input-label">username :</label><br>
-                <input type="text" name="username" class="input-value"><br>
+            <div class="input-regis">
+                <label for="username" class="input-label">username :</label>
+                <input type="text" name="username" class="input-value">
+            </div>
+            <div>
                 <label for="studentid" class="input-label">student id :</label><br>
-                <input type="text" name="code" class="input-value"><br>
-            
-                <label for="name" class="input-label">name :</label><br>
-                <input type="text" name="name" class="input-value"><br>
+                <input type="text" name="code" class="input-value">
+            </div>
+
+            <div class="input-regis">
+                <label for="name" class="input-label">name :</label>
+                <input type="text" name="name" class="input-value">
+            </div>
+
+            <div>
                 <label for="lastname" class="input-label">lastname :</label><br>
-                <input type="text" name="lastname" class="input-value"><br>
-                <label for="password" class="input-label">password :</label><br>
-                <input type="password" name="password" class="input-value"><br>
-                <label for="fac id" class="input-label">faculty id:</label><br>
+                <input type="text" name="lastname" class="input-value">
+            </div>
+
+            <div class="input-regis">
+                <label for="password" class="input-label">password :</label>
+                <input type="password" name="password" class="input-value">
+            </div>
+
+            <div class="input-regis">
+                <label for="fac id" class="input-label">faculty id:</label>
                 <select name="faculty" class="catagory-select">
                     {% for faculty in all_faculty %}
                     <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
                     {% endfor %}
                 </select><br>
+            </div>
+            <div style="float: none;">
                 <label for="major" class="input-label"> major :</label><br>
                 <select name="major" class="catagory-select">
                     {% for major in all_major %}
                     <option value ="{{major.id}}">{{major.majorname}}</option>
                     {% endfor %}
                 </select><br>
+            </div>
+            <div class="pad-but">
                 <button type="submit" id="submitbt">ยืนยัน</button>
+            </div>
             </form>
         </div>
     </div>

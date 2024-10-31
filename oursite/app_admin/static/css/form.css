@@ -13,7 +13,11 @@ h1{
     border-radius: 5px;
     margin: 10px;
 }
-
+.input-regis{
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
 .pos{
     display: flex;
     align-items: center;
@@ -24,42 +28,46 @@ h1{
     font-size: 20px;
     font-weight: 500;
 }
+
 .input-box{
     float: left;
 }
 .input-box input,select,textarea{
     margin: 10px;
 }
-#submitbt, #submitbt00, #submitbt01{
+#submitbt{
     cursor: pointer;
     transition: 0.3s;
-    border-color: transparent;
+    border: 0.5px solid transparent;
     color: white;
-    width: 150px;
-    font-size: 20px;
+    width: 120px;
+    font-size: 15px;
     padding: 15px 30px;
     background-color: #1ac93a;
     margin-right: 5px;
     padding: 15px;
+    border-radius: 1rem;
+    font-weight: 500;
 }
-#submitbt:hover,#submitbt00:hover,#submitbt01:hover{
+#submitbt:hover{
     background-color: transparent;
     color: #1ac93a;
     border: 0.5px solid;
     border-color: #1ac93a;
 }
-#submitbt01{
-    display: none;
-}
+
 #cancelbt{
+    font-weight: 500;
     cursor: pointer;
-    border-color: transparent;
-    color: white;
     transition: 0.3s;
-    width: 150px;
+    border: 0.5px solid transparent;
+    color: white;
+    width: 120px;
     padding: 15px 30px;
-    font-size: 20px;
     background-color: #e91111;
+    margin-right: 5px;
+    padding: 15px;
+    border-radius: 1rem;
 }
 #cancelbt:hover{
     background-color: transparent;
@@ -70,6 +78,7 @@ h1{
 .pad-but{
     margin-top: 30px;
     display: flex;
+    justify-content: center;
 }
 textarea{
     display: block;
@@ -86,9 +95,9 @@ textarea:focus{
 .catagory-select{
     cursor: pointer;
     transition: 0.3s;
-    width: 280px;
+    width: 210px;
     height: 40px;
-    font-size: 18px;
+    font-size: 15px;
     background-color: transparent;
     border: 0.5px solid #007bff;
     border-radius: 5px;
@@ -117,11 +126,14 @@ textarea:focus{
 
 /*Responsive*/
 @media only screen and (max-width:1200px){
+    .input-regis{
+        float: none;
+    }
     .input-value{
         width: 350px;
     }
     .catagory-select{
-        width: 320px;
+        width: 300px;
     }
     .catagory-select option{
         font-size: 10px;
@@ -130,14 +142,18 @@ textarea:focus{
 
 @media only screen and (max-width:768px){
     .input-value{
-        width: 250px;
+        width: 300px;
     }
     .catagory-select{
-        width: 220px;
+        width: 300px;
     }
     .catagory-select option{
         font-size: 9px;
     }
+    .pad-but{
+        margin-bottom: 140px;
+    }
+
 }
 
 .upload-image {
@@ -179,16 +195,6 @@ textarea:focus{
         justify-content: center;
         flex-direction: column;
     }
-    .pad-but{
-        margin-left: 18%;
-    }
-    .addroom h1{
-        margin-left: 25%;
-    }
-    #submitbt01{
-        display: block;
-    }
-    #submitbt00{
-        display: none;
-    }
+
+
 }
