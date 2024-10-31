@@ -1,40 +1,39 @@
-
-{% extends "base.html" %}{% block title %}
+{% extends "base.html" %}
+{% block title %}
 <title>Register</title>
 {% endblock %}
 
 {% block content %}
     <div class="container">
-        <h1 class="kanit-regular">Register</h1>
+        <h1 style="font-weight: bold; text-align: center;">Register</h1>
         <img src="../static/icon/pfp.png" alt="Upload" id="uploadImage" class="upload-image">
         <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" >
         <div class="item">
-            <form method = "post" action="register" enctype="multipart/form-data">
-                {% csrf_token %}
-                <label for="username">username :</label>
-                <input type="text" name="username"><br>
-                <label for="studentid">student id :</label>
-                <input type="text" name="code"><br>
-                <label for="name">name :</label>
-                <input type="text" name="name"><br>
-                <label for="lastname">lastname :</label>
-                <input type="text" name="lastname"><br>
-                <label for="password">password :</label>
-                <input type="password" name="password"><br>
-                <label for="fac id">faculty id:</label>
-                <select name="faculty">
-                    {% for faculty in all_faculty %}
-                    <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
-                    {% endfor %}
-                </select><br>
-                <label for="major"> major :</label>
-                <select name="major">
-                    {% for major in all_major %}
-                    <option value ="{{major.id}}">{{major.majorname}}</option>
-                    {% endfor %}
-                </select><br>
-                <button type="submit">Submit</button>
-            </form>
+                <form method = "post" action = "catname" class="addroom">
+                    {% csrf_token %}
+                <div class="input-box">
+                    <label for="username" class="input-label">username :</label><br>
+                    <input type="text" class="input-value"  name="username"><br>
+                    <label for="name" class="input-label">name :</label><br>
+                    <input type="text" class="input-value"  name="name"><br>
+                    <label for="major" class="input-label"> major :</label><br>
+                    <input type="text" name="major" class="input-value"><br>
+                    <input type="submit" value="บันทึก" id="submitbt00">
+                </div><div class="input-box">
+                    <label for="password" class="input-label">password :</label><br>
+                    <input type="text" class="input-value"  name="password"><br>
+
+                    <label for="lastname" class="input-label">lastname :</label><br>
+                    <input type="text" class="input-value"  name="lastname" ><br>
+                    <label for="fac id" class="input-label">faculty id:</label><br>
+                    <select  class="catagory-select">
+                        {% for faculty in all_faculty %}
+                        <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
+                        {% endfor %}
+                    <input type="submit" value="บันทึก" id="submitbt01">
+                </form>
         </div>
     </div>
 {% endblock %}
+
+
