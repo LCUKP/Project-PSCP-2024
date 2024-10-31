@@ -15,7 +15,7 @@
                 <input type="text"  name="catname" ><br>
                 <label for="permission">Permission :</label>
                 <select name="fac">
-                    {% for faculty in all_faculty %}
+                    {% for faculty in facultys %}
                     <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
                     {% endfor %}
                 </select><br>
