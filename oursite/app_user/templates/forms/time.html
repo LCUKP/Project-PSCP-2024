@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Calendar</title>
+{% endblock %}
+{% block link%}
+<link rel="stylesheet" href="../static/css/time.css">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="time-container">
+        <div class="inside-time-container">
+            <h1 id="book-date">วัน พฤหัสบดี ที่ 31 ตุลาคม 2567</h1>
+            <div class="time-block">
+                <div class="time-slot">9:00 - 10:00 น.</div>
+                <div class="time-slot">10:00 - 11:00 น.</div>
+                <div class="time-slot">11:00 - 12:00 น.</div>
+                <div class="time-slot">12:00 - 13:00 น.</div>
+                <div class="time-slot">13:00 - 14:00 น.</div>
+                <div class="time-slot">14:00 - 15:00 น.</div>
+                <div class="time-slot">15:00 - 16:00 น.</div>
+                <div class="time-slot">16:00 - 17:00 น.</div>
+                <div class="time-slot">17:00 - 18:00 น.</div>
+                <div class="time-slot">18:00 - 19:00 น.</div>
+                <div class="time-slot">19:00 - 20:00 น.</div>
+                <div class="time-slot">20:00 - 21:00 น.</div>
+            </div>
+            <p class="note">*จองได้สูงสุด 3 ชม.</p>
+            <hr color="#007bff">
+            <div class="time-description">
+                <h2 style="color:#007bff;">รายละเอียด</h2>
+                <table>
+                    <tr>
+                        <td class="des-head">วัน : </td>
+                        <td class="des-data">พฤหัสบดี ที่ 31 ตุลาคม 2567</td>
+                    </tr>
+                    <tr>
+                        <td class="des-head">เวลา : </td>
+                        <td class="des-data">15:00 - 17:00 น. (2 ชม.)</td>
+                    </tr>
+                    <tr>
+                        <td class="des-head">สถานที่ : </td>
+                        <td class="des-data">Peer tutor 1 ห้อง Creative and Ideaton ชั้น 2</td>
+                    </tr>
+                    <tr>
+                        <td class="des-head">ผู้ดูแล : </td>
+                        <td class="des-data">Admin 01</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="time-save"><input id="time-save" type="button" value="บันทึก"><input id="time-cancel" type="button" value="ยกเลิก"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

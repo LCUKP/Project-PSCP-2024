@@ -48,3 +48,6 @@ def register(request) :
 
 def calendar(request) :
     return render(request,"forms/calendar.html")
+
+def time(request):
+    return render(request,"forms/time.html")
