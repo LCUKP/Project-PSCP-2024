@@ -6,15 +6,19 @@
 {% block content %}
     <div class="container">
         <div class="item">
-            <h1 class="kanit-regular">booking</h1>
+            <h1 class="kanit-regular">Add Category</h1>
         </div>
         <div class="item">
-            <form method = "post" action = "catname">
+            <form method = "post" action = "add-room">
                 {% csrf_token %}
                 <label for="name">Category Name :</label>
                 <input type="text"  name="catname" ><br>
                 <label for="permission">Permission :</label>
-                <input type="radio" name="permission"><br>
+                <select name="fac">
+                    {% for faculty in all_faculty %}
+                    <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
+                    {% endfor %}
+                </select><br>
                 <input type="submit" value="บันทึก">
             </form>
         </div>
