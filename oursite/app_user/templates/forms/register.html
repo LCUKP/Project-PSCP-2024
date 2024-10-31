@@ -5,8 +5,28 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="kanit-regular">Register</h1>
+        <h1 style="font-weight: bold; text-align: center;">Register</h1>
         <div class="item">
+<<<<<<< HEAD
+                <form method = "post" action = "catname" class="addroom">
+                    {% csrf_token %}
+                <div class="input-box">
+                    <label for="username" class="input-label">username :</label><br>
+                    <input type="text" class="input-value"  name="username"><br>
+                    <label for="name" class="input-label">name :</label><br>
+                    <input type="text" class="input-value"  name="name"><br>
+                    <label for="major" class="input-label"> major :</label><br>
+                    <input type="text" name="major" class="input-value"><br>
+                    <input type="submit" value="บันทึก" id="submitbt00">
+                </div><div class="input-box">
+                    <label for="password" class="input-label">password :</label><br>
+                    <input type="text" class="input-value"  name="password"><br>
+
+                    <label for="lastname" class="input-label">lastname :</label><br>
+                    <input type="text" class="input-value"  name="lastname" ><br>
+                    <label for="fac id" class="input-label">faculty id:</label><br>
+                    <select  class="catagory-select">
+=======
             <form>
                 <form method = "POST" action = "register" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -24,13 +44,12 @@
                     <input type="file" accept=".png, .jpg, .jpeg" name="img"><br>
                     <label for="fac id">faculty id:</label>
                     <select name="faculty">
+>>>>>>> a191ab25b3b37e86b268e60d0817ab67bf61c920
                         {% for faculty in all_faculty %}
                         <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
                         {% endfor %}
-                    </select><br>
-                    <label for="major"> major :</label>
-                    <input type="text" name="major"><br>
-                    <input type="submit" value="บันทึก">
+                    </select><br></div>
+                    <input type="submit" value="บันทึก" id="submitbt01">
                 </form>
         </div>
     </div>

@@ -3,14 +3,15 @@ h1{
     color: #007bff;
     text-align: center;
 }
-.addroom .input-value{
+.input-value{
     transition: 0.3s;
-    width: 400px;
+    width: 300px;
     height: 60px;
     font-size: 18px;
     background-color: transparent;
     border: 0.5px solid #007bff;
     border-radius: 5px;
+    margin: 10px;
 }
 
 .pos{
@@ -24,13 +25,12 @@ h1{
     font-weight: 500;
 }
 .input-box{
-    padding-bottom: 10px;
     float: left;
 }
 .input-box input,select,textarea{
     margin: 10px;
 }
-#submitbt{
+#submitbt, #submitbt00, #submitbt01{
     cursor: pointer;
     transition: 0.3s;
     border-color: transparent;
@@ -42,11 +42,14 @@ h1{
     margin-right: 5px;
     padding: 15px;
 }
-#submitbt:hover{
+#submitbt:hover,#submitbt00:hover,#submitbt01:hover{
     background-color: transparent;
     color: #1ac93a;
     border: 0.5px solid;
     border-color: #1ac93a;
+}
+#submitbt01{
+    display: none;
 }
 #cancelbt{
     cursor: pointer;
@@ -113,7 +116,7 @@ textarea:focus{
 
 /*Responsive*/
 @media only screen and (max-width:1200px){
-    .addroom .input-value{
+    .input-value{
         width: 350px;
     }
     .catagory-select{
@@ -125,7 +128,7 @@ textarea:focus{
 }
 
 @media only screen and (max-width:768px){
-    .addroom .input-value{
+    .input-value{
         width: 250px;
     }
     .catagory-select{
@@ -137,11 +140,11 @@ textarea:focus{
 }
 
 @media only screen and (max-width:600px){
-    .addroom .input-value{
-        width: 370px;
+    .input-value{
+        width: 300px;
     }
     .catagory-select{
-        width: 370px;
+        width: 300px;
     }
     .catagory-select option{
         font-size: 9px;
@@ -164,7 +167,13 @@ textarea:focus{
     .pad-but{
         margin-left: 18%;
     }
-    h1{
+    .addroom h1{
         margin-left: 25%;
+    }
+    #submitbt01{
+        display: block;
+    }
+    #submitbt00{
+        display: none;
     }
 }
