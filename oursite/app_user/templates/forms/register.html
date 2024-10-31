@@ -6,8 +6,9 @@
 {% block content %}
     <div class="container">
         <h1 style="font-weight: bold; text-align: center;">Register</h1>
+        <img src="../static/icon/pfp.png" alt="Upload" id="uploadImage" class="upload-image">
+        <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" >
         <div class="item">
-<<<<<<< HEAD
                 <form method = "post" action = "catname" class="addroom">
                     {% csrf_token %}
                 <div class="input-box">
@@ -26,29 +27,6 @@
                     <input type="text" class="input-value"  name="lastname" ><br>
                     <label for="fac id" class="input-label">faculty id:</label><br>
                     <select  class="catagory-select">
-=======
-            <form>
-                <form method = "POST" action = "register" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <label for="username">username :</label>
-                    <input type="text" name="username"><br>
-                    <label for="studentid">student id :</label>
-                    <input type="text" name="code"><br>
-                    <label for="name">name :</label>
-                    <input type="text" name="name"><br>
-                    <label for="lastname">lastname :</label>
-                    <input type="text" name="lastname"><br>
-                    <label for="password">password :</label>
-                    <input type="password" name="password"><br>
-                    <label for="img">image :</label>
-                    <input type="file" accept=".png, .jpg, .jpeg" name="img"><br>
-                    <label for="fac id">faculty id:</label>
-                    <select name="faculty">
->>>>>>> a191ab25b3b37e86b268e60d0817ab67bf61c920
-                        {% for faculty in all_faculty %}
-                        <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
-                        {% endfor %}
-                    </select><br></div>
                     <input type="submit" value="บันทึก" id="submitbt01">
                 </form>
         </div>

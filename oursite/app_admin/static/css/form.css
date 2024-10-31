@@ -139,6 +139,22 @@ textarea:focus{
     }
 }
 
+
+.upload-image {
+    cursor: pointer;
+    max-width: 150px;
+    max-height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+#fileInput{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+}
+
 @media only screen and (max-width:600px){
     .input-value{
         width: 300px;
@@ -156,7 +172,6 @@ textarea:focus{
         margin: 5px;
     }
     .input-box{
-        justify-content: center;
         width: 300px;
     }
     .addroom{
