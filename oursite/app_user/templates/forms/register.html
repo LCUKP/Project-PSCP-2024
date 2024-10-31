@@ -1,11 +1,13 @@
-{% extends "base.html" %}
-{% block title %}
+
+{% extends "base.html" %}{% block title %}
 <title>Register</title>
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <h1 class="kanit-regular">Register</h1>
+        <img src="../static/icon/pfp.png" alt="Upload" id="uploadImage" class="upload-image">
+        <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" >
         <div class="item">
             <form method = "post" action="register" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -19,8 +21,6 @@
                 <input type="text" name="lastname"><br>
                 <label for="password">password :</label>
                 <input type="password" name="password"><br>
-                <label for="img">image :</label>
-                <input type="file" accept=".png, .jpg, .jpeg" name="img"><br>
                 <label for="fac id">faculty id:</label>
                 <select name="faculty">
                     {% for faculty in all_faculty %}
