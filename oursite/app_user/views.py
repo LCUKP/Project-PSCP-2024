@@ -53,6 +53,9 @@ def calendar(request) :
 def login(request) :
     pass
 
+def time(request):
+    return render(request,"forms/time.html")
+
 def test(request) :
     return render(request,"forms/test.html")
 
