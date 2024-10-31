@@ -101,6 +101,7 @@ button:hover{
     -webkit-user-select: none;
     -ms-user-select: none;
      user-select: none;
+     animation: none;
 }
 
 .second-section{
