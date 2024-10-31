@@ -27,7 +27,7 @@ class user(models.Model) :
     major = models.ForeignKey(major,on_delete=models.CASCADE)
     
     def __str__(self) :
-        return  self.code + " " + self.username + " " + self.lastname
+        return  self.code + " " + self.name + " " + self.lastname
     
 class booking(models.Model) :
     datebook = models.DateField(null=False)
