@@ -9,4 +9,5 @@ urlpatterns = [
     path('report',views.report),
     path('register', views.register),
     path('calendar',views.calendar),
+    path('login',views.login),
 ]

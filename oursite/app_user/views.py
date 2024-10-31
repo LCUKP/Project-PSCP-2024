@@ -49,3 +49,5 @@ def register(request) :
 
 def calendar(request) :
     return render(request,"forms/calendar.html")
+def login(request) :
+    pass
