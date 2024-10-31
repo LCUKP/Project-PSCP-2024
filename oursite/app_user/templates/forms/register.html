@@ -7,31 +7,34 @@
     <div class="container">
         <h1 class="kanit-regular">Register</h1>
         <div class="item">
-            <form>
-                <form method = "POST" action = "register" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <label for="username">username :</label>
-                    <input type="text" name="username"><br>
-                    <label for="studentid">student id :</label>
-                    <input type="text" name="code"><br>
-                    <label for="name">name :</label>
-                    <input type="text" name="name"><br>
-                    <label for="lastname">lastname :</label>
-                    <input type="text" name="lastname"><br>
-                    <label for="password">password :</label>
-                    <input type="password" name="password"><br>
-                    <label for="img">image :</label>
-                    <input type="file" accept=".png, .jpg, .jpeg" name="img"><br>
-                    <label for="fac id">faculty id:</label>
-                    <select name="faculty">
-                        {% for faculty in all_faculty %}
-                        <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
-                        {% endfor %}
-                    </select><br>
-                    <label for="major"> major :</label>
-                    <input type="text" name="major"><br>
-                    <input type="submit" value="บันทึก">
-                </form>
+            <form method = "post" action="register" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="username">username :</label>
+                <input type="text" name="username"><br>
+                <label for="studentid">student id :</label>
+                <input type="text" name="code"><br>
+                <label for="name">name :</label>
+                <input type="text" name="name"><br>
+                <label for="lastname">lastname :</label>
+                <input type="text" name="lastname"><br>
+                <label for="password">password :</label>
+                <input type="password" name="password"><br>
+                <label for="img">image :</label>
+                <input type="file" accept=".png, .jpg, .jpeg" name="img"><br>
+                <label for="fac id">faculty id:</label>
+                <select name="faculty">
+                    {% for faculty in all_faculty %}
+                    <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
+                    {% endfor %}
+                </select><br>
+                <label for="major"> major :</label>
+                <select name="major">
+                    {% for major in all_major %}
+                    <option value ="{{major.id}}">{{major.majorname}}</option>
+                    {% endfor %}
+                </select><br>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 {% endblock %}
