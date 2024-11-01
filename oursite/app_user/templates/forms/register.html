@@ -11,50 +11,52 @@
         <div class="item">
             <form method = "post" action="register" enctype="multipart/form-data" class="addroom">
                 {% csrf_token %}
-                <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" >
+                <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" required>
 
             <div class="input-regis">
-                <label for="username" class="input-label">username :</label>
-                <input type="text" name="username" class="input-value">
+                <label for="username" class="input-label">ชื่อผู้ใช้</label>
+                <input type="text" name="username" class="input-value" required>
             </div>
             <div>
-                <label for="studentid" class="input-label">student id :</label><br>
-                <input type="text" name="code" class="input-value">
+                <label for="studentid" class="input-label">รหัสนักศึกษา</label><br>
+                <input type="text" name="code" class="input-value" required>
             </div>
 
             <div class="input-regis">
-                <label for="name" class="input-label">name :</label>
-                <input type="text" name="name" class="input-value">
+                <label for="name" class="input-label">ชื่อ</label>
+                <input type="text" name="name" class="input-value" required>
             </div>
 
             <div>
-                <label for="lastname" class="input-label">lastname :</label><br>
-                <input type="text" name="lastname" class="input-value">
+                <label for="lastname" class="input-label">นามสกุล</label><br>
+                <input type="text" name="lastname" class="input-value" required>
             </div>
 
             <div class="input-regis">
-                <label for="password" class="input-label">password :</label>
-                <input type="password" name="password" class="input-value">
+                <label for="password" class="input-label">รหัสผ่าน</label>
+                <input type="password" name="password" class="input-value" required>
             </div>
 
             <div class="input-regis">
-                <label for="fac id" class="input-label">faculty id:</label>
-                <select name="faculty" class="catagory-select">
+                <label for="fac id" class="input-label">คณะ</label>
+                <select name="faculty" class="catagory-select" required>
+                    <option value="null"></option>
                     {% for faculty in all_faculty %}
                     <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
                     {% endfor %}
                 </select><br>
             </div>
             <div style="float: none;">
-                <label for="major" class="input-label"> major :</label><br>
-                <select name="major" class="catagory-select">
+                <label for="major" class="input-label">สาขา</label><br>
+                <select name="major" class="catagory-select" required>
+                    <option value="null"></option>
                     {% for major in all_major %}
                     <option value ="{{major.id}}">{{major.majorname}}</option>
                     {% endfor %}
                 </select><br>
             </div>
             <div class="pad-but">
-                <button type="submit" id="submitbt">ยืนยัน</button>
+                <button id="submitbt" type="submit" onclick="return confirm('ต้องการยืนยันใช่หรือไม่')">ยืนยัน</button><a href="#"><button id="cancelbt"  type="button">ยกเลิก</button></a>
             </div>
             </form>
         </div>

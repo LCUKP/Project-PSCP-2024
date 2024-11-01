@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from app_user.models import faculty
+from app_admin.models import category
 
 # Create your views here.
 def index(request) :
@@ -13,4 +14,5 @@ def form_room(request) :
         # fac = request.POST["fac"]
         print(name)
     else :
-        return render(request,"forms/rooms.html")
+        all_cat = category.objects.all()
+        return render(request,"forms/rooms.html",{"all_cat":all_cat})

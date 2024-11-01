@@ -1,8 +1,4 @@
-h1{
-    padding-bottom: 15px;
-    color: #007bff;
-    text-align: center;
-}
+
 .input-value{
     transition: 0.3s;
     width: 200px;
@@ -14,12 +10,12 @@ h1{
     margin: 10px;
 }
 .input-regis{
-    display: flex;
+    display: -webkit-flex;
     flex-direction: column;
     float: left;
 }
 .pos{
-    display: flex;
+    display: -webkit-flex;
     align-items: center;
 }
 .input-label{
@@ -76,8 +72,9 @@ h1{
     border-color: #e91111;
 }
 .pad-but{
+    float: none;
     margin-top: 30px;
-    display: flex;
+    display: -webkit-flex;
     justify-content: center;
 }
 textarea{
@@ -191,7 +188,7 @@ textarea:focus{
         width: 300px;
     }
     .addroom{
-        display: flex;
+        display: -webkit-flex;
         justify-content: center;
         flex-direction: column;
     }

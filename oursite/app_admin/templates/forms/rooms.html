@@ -6,38 +6,46 @@
 
 {% block content %}
 <div class="container">
-    <form class="addroom" method="post" action="rooms">
+    <form class="addroom" method="post" action="rooms" id="addroom-form">
         <h1 style="font-weight: bold; text-align: left;">เพิ่มห้อง</h1>
         <div class="input-box">
             <div>
             <span class="input-label">ชื่อห้อง</span><br>
-            <input class="input-value" type="text" name="roomname">
+            <input class="input-value" type="text" name="roomname" required>
             </div><br>
             <div>
             <span class="input-label">หมวดหมู่</span><br>
-            <select name="Catagory" id="" class="catagory-select">
+            <select name="Catagory" id="" class="catagory-select" required>
                 <option value="null"></option>
-               <!-- <option value="Creative Room">Creative Room</option>
-                <option value="Laboratory Room">Laboratory Room</option>
-                <option value="Lecture Room">Lecture Room</option>
-                <option value="Project Base Room">Project Base Room</option>-->
+                {% for cat in all_cat %}
+                <option value ="{{cat.id}}">{{cat.catname}}</option>
+                {% endfor %}
               </select>
-            </div>
         </div>
+        <div style="margin-top: 10px;">
+            <label for="permission" class="input-label">การอนุมัติสิทธิ์เข้าใช้งาน</label><br>
+            <input type="radio" id="true" name="fav_language" value="true">
+         <label for="true" style="color: green;">ต้องรออนุมัติ</label><br>
+                <input type="radio" id="false" name="fav_language" value="false">
+              <label for="false" style="color: red;">ไม่ต้องรออนุมัติ</label>
+        </div></div>
         <div class="input-box"><div>
             <span class="input-label">จำนวนห้อง</span><br><div class="pos">
-            <input class="input-value" type="number" min="1" name="roomnum"><p class="input-label">ห้อง</p></div>
-        </div><br>
+            <input class="input-value" type="number" min="1" name="roomnum"><p class="input-label" required>ห้อง</p></div>
+        </div><br><div style="margin-bottom: 10px;">
+        <label for="name"  class="input-label">สถานที่</label><br>
+        <input type="text"  name="catname" class="input-value" required><br>
+        </div>
         <div>
             <span class="input-label">เวลาเปิด-ปิด</span><br><div class="pos">
-                <input type="number" min="0" class="input-time"><p style="font-size:20px; color: #007bff;">:</p><input type="number" min="0" class="input-time">
+                <input type="number" min="0" class="input-time"><p style="font-size:20px; color: #007bff;" required>:</p><input type="number" min="0" class="input-time" required> 
               <p style="font-size:20px; color: #007bff; margin: 0px 5px;">ถึง</p>
-              <input type="number" min="0" class="input-time"><p style="font-size:20px; color: #007bff;">:</p><input type="number" min="0" class="input-time">
+              <input type="number" min="0" class="input-time" required><p style="font-size:20px; color: #007bff;">:</p><input type="number" min="0" class="input-time" required>
    </div>
         </div></div><br>
 
         <div class="input-box">
-            <input class="input-label" type="file" name="Upload file"><br><br>
+            <input class="input-label" type="file" name="Upload file" multiple required><br><br>
             <div>
                 <span class="input-label">หมายเหตุ</span><br>
                 <textarea class="annotation" name="note"></textarea>
@@ -45,7 +53,7 @@
         </div>
     </form>
     <div class="pad-but">
-        <button id="submitbt">บันทึก</button><button id="cancelbt">ยกเลิก</button>
+        <button id="submitbt" type="submit" form="addroom-form" onclick="return confirm('ต้องการบันทึกใช่หรือไม่')">บันทึก</button><a href="#"><button id="cancelbt"  type="button">ยกเลิก</button></a>
     </div>
 </div>
 {% endblock %}
