@@ -40,6 +40,20 @@ a{
     font-size: 16px;
     transition: 0.1s;
 }
+.logout {
+    margin-bottom: 10px;
+    font-weight: bold;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    height: 40px;
+    padding: 0;
+    width: 90px;
+    font-size: 16px;
+    transition: 0.1s;
+}
 .nav img{
     height: 45px;
     margin-left: 10px;
@@ -58,6 +72,12 @@ a{
     background-color: transparent;
     border-color: #007bff;
     color: #007bff;
+}
+.logout:hover{
+    border: solid;
+    background-color: transparent;
+    border-color: #ff0000;
+    color: #ff0000;
 }
 .brand:hover{
   color: #1586ff;

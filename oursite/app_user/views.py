@@ -22,8 +22,6 @@ def report(request) :
     return render(request,"report.html")
 
 def register(request) :
-    all_faculty = faculty.objects.all()
-    all_major = major.objects.all()
     if request.method == "POST":
         username = request.POST["username"]
         studentid = request.POST["code"]
@@ -45,6 +43,8 @@ def register(request) :
         )
         User.save()
         return redirect('/#popup')
+    all_faculty = faculty.objects.all()
+    all_major = major.objects.all()
     return render(request,"forms/register.html",{"all_faculty":all_faculty,"all_major":all_major})
 
 def calendar(request) :
