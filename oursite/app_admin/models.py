@@ -21,7 +21,7 @@ class category(models.Model) :
     admin = models.ForeignKey(admin_acc,on_delete=models.CASCADE)
     
     def __str__(self) :
-        return  str(self.catid)+ " " + self.catname
+        return  str(self.id)+ " " + self.catname
     
 class room(models.Model) :
     roomname = models.CharField(max_length=200)

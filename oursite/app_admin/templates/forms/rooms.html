@@ -6,7 +6,8 @@
 
 {% block content %}
 <div class="container">
-    <form class="addroom" method="post" action="rooms" id="addroom-form">
+    <form class="addroom" method="post" action="add-room" id="addroom-form">
+        {% csrf_token %}
         <h1 style="font-weight: bold; text-align: left;">เพิ่มห้อง</h1>
         <div class="input-box">
             <div>
@@ -15,8 +16,8 @@
             </div><br>
             <div>
             <span class="input-label">หมวดหมู่</span><br>
-            <select name="Catagory" id="" class="catagory-select" required>
-                <option value="null"></option>
+            <select name="catagory" id="" class="catagory-select" required>
+                <option value="เลือกหมวดหมู่"></option>
                 {% for cat in all_cat %}
                 <option value ="{{cat.id}}">{{cat.catname}}</option>
                 {% endfor %}
@@ -24,28 +25,29 @@
         </div>
         <div style="margin-top: 10px;">
             <label for="permission" class="input-label">การอนุมัติสิทธิ์เข้าใช้งาน</label><br>
-            <input type="radio" id="true" name="fav_language" value="true">
+            <input type="radio" id="true" name="approved" value="true">
          <label for="true" style="color: green;">ต้องรออนุมัติ</label><br>
-                <input type="radio" id="false" name="fav_language" value="false">
+                <input type="radio" id="false" name="unapproved" value="false">
               <label for="false" style="color: red;">ไม่ต้องรออนุมัติ</label>
         </div></div>
-        <div class="input-box"><div>
-            <span class="input-label">จำนวนห้อง</span><br><div class="pos">
-            <input class="input-value" type="number" min="1" name="roomnum"><p class="input-label" required>ห้อง</p></div>
-        </div><br><div style="margin-bottom: 10px;">
+        <div style="margin-bottom: 10px;">
         <label for="name"  class="input-label">สถานที่</label><br>
-        <input type="text"  name="catname" class="input-value" required><br>
+        <input type="text"  name="address" class="input-value" required><br>
         </div>
-        <div>
+        <div style="margin-bottom: 10px;">
+            <label for="timelenght"  class="input-label">ระยะเวลา</label><br>
+            <input type="number"  name="timelenght" default = 1 min = 1 max = 24 class="input-value" required><br>
+            </div>
+        {% comment %} <div>
             <span class="input-label">เวลาเปิด-ปิด</span><br><div class="pos">
-                <input type="number" min="0" class="input-time"><p style="font-size:20px; color: #007bff;" required>:</p><input type="number" min="0" class="input-time" required> 
+                <input type="number" min= 0 max = 24 class="input-time" name = "start_hour"><p style="font-size:20px; color: #007bff;" required>:</p><input type="number" min= 0 max= 60 default = 0 name = "start_minute" class="input-time" required> 
               <p style="font-size:20px; color: #007bff; margin: 0px 5px;">ถึง</p>
-              <input type="number" min="0" class="input-time" required><p style="font-size:20px; color: #007bff;">:</p><input type="number" min="0" class="input-time" required>
-   </div>
+              <input type="number" min= 0 max = 24 name = "end_hour" class="input-time" required><p style="font-size:20px; color: #007bff;">:</p><input type="number" min= 0 max = 60 default = 0 name = "end_minute" class="input-time" required>
+   </div> {% endcomment %}
         </div></div><br>
 
         <div class="input-box">
-            <input class="input-label" type="file" name="Upload file" multiple required><br><br>
+            <input class="input-label" type="file" name="img" multiple required><br><br>
             <div>
                 <span class="input-label">หมายเหตุ</span><br>
                 <textarea class="annotation" name="note"></textarea>
