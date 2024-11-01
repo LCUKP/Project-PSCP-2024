@@ -6,9 +6,13 @@
     box-shadow: 0 0px 12px #c7c7c7;
 }
 .inside-time-container{
-    margin: 10%;
+    margin: 5%;
 }
 #book-date{
+    color: #007bff;
+}
+.select-time{
+    font-size: 48px;
     color: #007bff;
 }
 .time-block{
@@ -16,9 +20,9 @@
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    max-width: 800px;
     margin-top: 20px;
     column-gap: 50px;
 }
@@ -39,6 +43,17 @@
 .time-slot:hover{
     background-color: #007bff;
     color: #fff;
+}
+.time-slot-disable{
+    width: 148px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #E6E6E6;
+    color: #8e8e8e;
+    border: 2px #e6e6e6 solid;
 }
 .note{
     color: #d40000;
@@ -84,4 +99,35 @@
 }
 .time-description table{
     font-size: 18px;
+}
+
+@media only screen and (max-width:1024px){
+    .time-container{
+        width: 100%;
+    }
+    .time-slot, .time-slot-disable{
+        width: 100px;
+        height: 50px;
+        font-size: 14px;
+    }
+    .time-block{
+        gap: 20px;
+    }
+    .time-container{
+        width: 90%;
+    }
+    .des-head, .des-data{
+        font-size: 13px;
+    }
+    .time-description{
+        padding-top: 20px;
+    }
+    .time-save{
+        padding-top: 20px;
+    }
+    .time-save input[type="button"]{
+        width: 30%;
+        padding: 10px;
+        font-size: 16px;
+    }
 }

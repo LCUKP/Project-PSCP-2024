@@ -64,3 +64,9 @@ def test_register(request):
         return HttpResponse("Received POST request!")
     elif request.method == 'GET':
         return HttpResponse("Not a POST request")
+
+def reservation(request):
+    return render(request,"forms/reservation.html")
+
+def selectroom(request):
+    return render(request,"forms/selectroom.html")

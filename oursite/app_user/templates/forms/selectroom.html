@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Select Room</title>
+{% endblock %}
+{% block link%}
+<link rel="stylesheet" href="../static/css/selectroom.css">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="room-head">เลือกห้อง</h1>
+    <div class="room-container">
+        <div class="card" id="first-room">
+            <div class="card-overlay">
+                <p class="card-title">Creative Room</p>
+                <p class="card-sub">ชั้น 2</p>
+            </div>
+        </div>
+        <div class="card" id="second-room">
+            <div class="card-overlay">
+                <p class="card-title">Peer Tutor 1</p>
+                <p class="card-sub">ชั้น 2</p>
+            </div>
+        </div>
+        <div class="card" id="third-room">
+            <div class="card-overlay">
+                <p class="card-title">Peer Tutor 2</p>
+                <p class="card-sub">ชั้น 2</p>
+            </div>
+        </div>
+        <div class="card" id="fourth-room">
+            <div class="card-overlay">
+                <p class="card-title">Peer Tutor 3</p>
+                <p class="card-sub">ชั้น 2</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

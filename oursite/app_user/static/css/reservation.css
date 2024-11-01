@@ -1,0 +1,77 @@
+.reserv-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    row-gap: 25px;
+    column-gap: 25px;
+    max-width: 80%;
+}
+.reserv-container .card{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    border-radius: 50px;
+    box-shadow: 0 0px 12px #999999;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.res-head{
+    font-size: 48px;
+    color: #007bff;
+}
+#creat-room{
+    background-image: url("https://www.vanorohotel.com/wp-content/uploads/2021/07/drz-vanoro_6737.jpg");
+    background-size: cover;
+}
+#lab-room{
+    background-image: url("https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/gallery/living-room/u-shaped-luxury-living-room-with-wall-trims-and-wallpaper/modern-luxury-modern-living-room-design.jpg.transform/bh-gallery-listing/image.webp");
+    background-size: cover;
+}
+#lect-room{
+    background-image: url("https://www.home-designing.com/wp-content/uploads/2022/09/dark-living-room-feature-wall.jpg");
+    background-size: cover;
+}
+#proj-room{
+    background-image: url("https://remodeledai.b-cdn.net/static/landing/marquee/popart.webp");
+    background-size: cover;
+}
+.reserv-container .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0px 12px #5c5c5c;
+}
+.reserv-container .card .card-overlay{
+    position: absolute;
+    bottom: 0;
+    width: 92%;
+    height: 35%;
+    padding: 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0),#000);
+    color: #fff;
+}
+.reserv-container .card-title{
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+.reserv-container .card-sub{
+    font-size: 24px;
+    margin: 5px 0 0;
+}
+
+@media only screen and (max-width:768px){
+    .reserv-container .card{
+        width: 270px;
+    }
+    .reserv-container .card .card-overlay{
+        width: 85.5%;
+    }
+    .reserv-container .card-title{
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0;
+    }
+}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Reservation</title>
+{% endblock %}
+{% block link%}
+<link rel="stylesheet" href="../static/css/reservation.css">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="res-head">เลือกประเภทห้อง</h1>
+    <div class="reserv-container">
+        <div class="card" id="creat-room">
+            <div class="card-overlay">
+                <p class="card-title">Creative Room</p>
+                <p class="card-sub">ชั้น 2</p>
+            </div>
+        </div>
+        <div class="card" id="lab-room">
+            <div class="card-overlay">
+                <p class="card-title">Laboratory Room</p>
+                <p class="card-sub">ชั้น 2</p>
+            </div>
+        </div>
+        <div class="card" id="lect-room">
+            <div class="card-overlay">
+                <p class="card-title">Lecture Room</p>
+                <p class="card-sub">ชั้น 2</p>
+            </div>
+        </div>
+        <div class="card" id="proj-room">
+            <div class="card-overlay">
+                <p class="card-title">Project Base Room</p>
+                <p class="card-sub">ชั้น 2</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

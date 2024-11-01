@@ -13,4 +13,6 @@ urlpatterns = [
     path('time',views.time),
     path('test_register', views.test_register),
     path('test', views.test),
+    path('reservation',views.reservation),
+    path('selectroom',views.selectroom)
 ]

@@ -1,18 +1,19 @@
 {% extends "base.html" %}
 {% block title %}
-<title>Calendar</title>
+<title>Time</title>
 {% endblock %}
 {% block link%}
 <link rel="stylesheet" href="../static/css/time.css">
 {% endblock %}
 {% block content %}
 <div class="container">
+    <h1 class="select-time">เลือกเวลา</h1>
     <div class="time-container">
         <div class="inside-time-container">
             <h1 id="book-date">วัน พฤหัสบดี ที่ 31 ตุลาคม 2567</h1>
             <div class="time-block">
-                <div class="time-slot">9:00 - 10:00 น.</div>
-                <div class="time-slot">10:00 - 11:00 น.</div>
+                <div class="time-slot-disable">9:00 - 10:00 น.</div>
+                <div class="time-slot-disable">10:00 - 11:00 น.</div>
                 <div class="time-slot">11:00 - 12:00 น.</div>
                 <div class="time-slot">12:00 - 13:00 น.</div>
                 <div class="time-slot">13:00 - 14:00 น.</div>
@@ -21,8 +22,8 @@
                 <div class="time-slot">16:00 - 17:00 น.</div>
                 <div class="time-slot">17:00 - 18:00 น.</div>
                 <div class="time-slot">18:00 - 19:00 น.</div>
-                <div class="time-slot">19:00 - 20:00 น.</div>
-                <div class="time-slot">20:00 - 21:00 น.</div>
+                <div class="time-slot-disable">19:00 - 20:00 น.</div>
+                <div class="time-slot-disable">20:00 - 21:00 น.</div>
             </div>
             <p class="note">*จองได้สูงสุด 3 ชม.</p>
             <hr color="#007bff">

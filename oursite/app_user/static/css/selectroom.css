@@ -1,0 +1,64 @@
+.room-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    row-gap: 25px;
+    column-gap: 25px;
+    padding-top: 20px;
+}
+.room-container .card{
+    position: relative;
+    width: 300px;
+    height: 500px;
+    border-radius: 50px;
+    box-shadow: 0 0px 12px #999999;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.room-head{
+    font-size: 48px;
+    color: #007bff;
+}
+#first-room{
+    background-image: url("https://www.vanorohotel.com/wp-content/uploads/2021/07/drz-vanoro_6737.jpg");
+    background-size: cover;
+}
+#second-room{
+    background-image: url("https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/gallery/living-room/u-shaped-luxury-living-room-with-wall-trims-and-wallpaper/modern-luxury-modern-living-room-design.jpg.transform/bh-gallery-listing/image.webp");
+    background-size: cover;
+}
+#third-room{
+    background-image: url("https://www.home-designing.com/wp-content/uploads/2022/09/dark-living-room-feature-wall.jpg");
+    background-size: cover;
+}
+#fourth-room{
+    background-image: url("https://remodeledai.b-cdn.net/static/landing/marquee/popart.webp");
+    background-size: cover;
+}
+.room-container .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0px 12px #5c5c5c;
+}
+.room-container .card-overlay{
+    position: absolute;
+    bottom: 0;
+    width: 260px;
+    height: 30%;
+    padding: 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0),#000);
+    color: #fff;
+}
+.room-container .card-title{
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+.room-container .card-sub{
+    font-size: 24px;
+    margin: 5px 0 0;
+}
