@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app_user.models import user,faculty,major
-from app_admin.models import admin_acc,category
+from app_admin.models import admin_acc,category, room
 
 # Create your views here.
 def index(request) :
@@ -70,5 +70,6 @@ def test_register(request):
 def reservation(request):
     return render(request,"forms/reservation.html")
 
-def selectroom(request):
-    return render(request,"forms/selectroom.html")
+def selectroom(request, catid):
+    all_room = room.objects.filter(id = catid)
+    return render(request,"forms/selectroom.html",{"all_room":all_room})

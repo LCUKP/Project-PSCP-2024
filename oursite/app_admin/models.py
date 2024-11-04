@@ -36,4 +36,4 @@ class room(models.Model) :
     admin = models.ForeignKey(admin_acc,on_delete=models.CASCADE)
     
     def __str__(self) :
-        return  str(self.roomid)+ " " + self.roomname
+        return  str(self.id)+ " " + self.roomname

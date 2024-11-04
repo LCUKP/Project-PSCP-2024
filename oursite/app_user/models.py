@@ -37,4 +37,4 @@ class booking(models.Model) :
     room = models.ManyToManyField(room)
     
     def __str__(self) :
-        return  str(self.bookid)+ " " + self.roomid + " " + self.datebook 
+        return  str(self.bookid)+ " " + self.id + " " + self.datebook 
