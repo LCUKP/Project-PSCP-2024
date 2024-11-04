@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app_user.models import user,faculty,major
-from app_admin.models import admin_acc
+from app_admin.models import admin_acc,category
 
 # Create your views here.
 def index(request) :
-    all_user = user.objects.all()
-    return render(request,"index.html",{"all_user":all_user})
+    if request.user.is_authenticated :
+        all_category = category.objects.all()
+        return render(request,"index.html",{"all_category":all_category})
+    return render(request,"index.html")
 
 def profile(request) :
     return render(request,"profile.html")

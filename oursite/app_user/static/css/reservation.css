@@ -21,22 +21,10 @@
     font-size: 48px;
     color: #007bff;
 }
-#creat-room{
-    background-image: url("https://www.vanorohotel.com/wp-content/uploads/2021/07/drz-vanoro_6737.jpg");
+.img-card{
     background-size: cover;
 }
-#lab-room{
-    background-image: url("https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/gallery/living-room/u-shaped-luxury-living-room-with-wall-trims-and-wallpaper/modern-luxury-modern-living-room-design.jpg.transform/bh-gallery-listing/image.webp");
-    background-size: cover;
-}
-#lect-room{
-    background-image: url("https://www.home-designing.com/wp-content/uploads/2022/09/dark-living-room-feature-wall.jpg");
-    background-size: cover;
-}
-#proj-room{
-    background-image: url("https://remodeledai.b-cdn.net/static/landing/marquee/popart.webp");
-    background-size: cover;
-}
+
 .reserv-container .card:hover{
     transform: translateY(-10px);
     box-shadow: 0 0px 12px #5c5c5c;

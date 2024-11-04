@@ -1,32 +1,46 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
-<title>Home</title>
+    {% if user.is_authenticated %}
+        <title>Reservation</title>
+    {% else %}
+        <title>Home</title>
+    {% endif %}
 {% endblock %}
 {% block link %}
-    <link rel="stylesheet" href="../static/css/home.css">
+    {% if user.is_authenticated %}
+        <link rel="stylesheet" href="{% static 'css/reservation.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    {% endif %}
 {% endblock %}
 {% block content %}
-    <div class="container">
-        <div class="item">
-            <div class="first-section">
-                <div class="logo">
-                    <h1>จองห้อง</h1>
-                    <p>ระบบจองห้อง Creative and Ideation<br> คณะเทคโนโลยีสารสนเทศ</p>
-                    <div class="element" id="element-mobile">
-                        <span id="s">ง่าย
-                            <img src="../static/icon/check.png" alt="Check">
-                        </span>
-                        <span id="s">สะดวก
-                            <img src="../static/icon/check.png" alt="Check">
-                        </span><br>
-                        <span id="l">ลดปัญหาการจองทับ
-                            <img src="../static/icon/check.png" alt="Check">
-                        </span>
-                    </div>
-                    <button>จองเลย</button>
-                    <button id="How">วิธีใช้งาน</button>
-                </div>
-                <div class="element">
+{% if user.is_authenticated %}
+
+<div class="container">
+    <h1 class="res-head">เลือกประเภทห้อง</h1>
+    <div class="reserv-container">
+        {% for cat in all_category %}
+        <a href>
+        <div class="card img-card" style="background-image: url('../..{{cat.img.url}}');">
+            <div class="card-overlay">
+                <p class="card-title">{{ cat.catname }}</p>
+                <p class="card-sub">{{ cat.address }}</p>
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% else %}
+<div class="container">
+    <div class="item">
+        <div class="first-section">
+            <div class="logo">
+                <h1>จองห้อง</h1>
+                <p>ระบบจองห้อง Creative and Ideation<br> คณะเทคโนโลยีสารสนเทศ</p>
+                <div class="element" id="element-mobile">
                     <span id="s">ง่าย
                         <img src="../static/icon/check.png" alt="Check">
                     </span>
@@ -37,18 +51,33 @@
                         <img src="../static/icon/check.png" alt="Check">
                     </span>
                 </div>
-                
+                <button>จองเลย</button>
+                <button id="How">วิธีใช้งาน</button>
             </div>
-        </div>
-        <div class="item">
-            <div class="second-section">
-                <h1 style="color: #007bff; margin: 10px;">About</h1>
-                <div class="paragraph">
-                    <p>{% lorem 1 b random %}</p>
-                </div>
+            <div class="element">
+                <span id="s">ง่าย
+                    <img src="../static/icon/check.png" alt="Check">
+                </span>
+                <span id="s">สะดวก
+                    <img src="../static/icon/check.png" alt="Check">
+                </span><br>
+                <span id="l">ลดปัญหาการจองทับ
+                    <img src="../static/icon/check.png" alt="Check">
+                </span>
             </div>
+            
         </div>
-        
     </div>
-    <h1 id="background-text">จองห้อง</h1>
+    <div class="item">
+        <div class="second-section">
+            <h1 style="color: #007bff; margin: 10px;">About</h1>
+            <div class="paragraph">
+                <p>{% lorem 1 b random %}</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endif %}
+<h1 id="background-text">จองห้อง</h1>
 {% endblock %}
