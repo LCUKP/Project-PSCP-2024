@@ -19,7 +19,7 @@
             </div>
             <div>
                 <label for="studentid" class="input-label">รหัสนักศึกษา</label><br>
-                <input type="text" name="code" class="input-value" required>
+                <input type="text" name="studentid" class="input-value" required>
             </div>
 
             <div class="input-regis">
@@ -39,7 +39,7 @@
 
             <div class="input-regis">
                 <label for="fac id" class="input-label">คณะ</label>
-                <select name="faculty" class="catagory-select" required>
+                <select name="fac id" class="catagory-select" required>
                     <option value="null"></option>
                     {% for faculty in all_faculty %}
                     <option value ="{{faculty.facid}}">{{faculty.facname}}</option>

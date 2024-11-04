@@ -35,7 +35,6 @@ function toggleDropdown() {
     }
 }
 
-// close dropdown when clicking outside
 function closeDropdownOnClickOutside(event) {
     let dropdown = document.getElementById('dropdownMenu');
     let selectedText = document.getElementById('selectedText');
@@ -48,9 +47,16 @@ function closeDropdownOnClickOutside(event) {
 
 function updateSelection() {
     let checkboxes = document.querySelectorAll('input[name="fac"]:checked');
-    let selectedText = Array.from(checkboxes).map(checkbox => checkbox.parentElement.textContent.trim());
-    let displayText = selectedText.length > 0 ? selectedText.join(', ') : 'เลือกคณะ';
-    document.getElementById('selectedText').textContent = displayText;
+    let selectedTextArray = Array.from(checkboxes).map(checkbox => checkbox.parentElement.textContent.trim());
+    let displayText = selectedTextArray.length > 0 ? selectedTextArray.join(', ') : 'เลือกคณะ';
+
+    let selectedTextElement = document.getElementById('selectedText');
+    selectedTextElement.textContent = displayText;
+    if (displayText === 'เลือกคณะ') {
+        selectedTextElement.style.color = '#8e8e8e';
+    } else {
+        selectedTextElement.style.color = '#000000';
+    }
 }
 
 function clearSelection() {
@@ -58,6 +64,9 @@ function clearSelection() {
     checkboxes.forEach(checkbox => {
         checkbox.checked = false;
     });
-    document.getElementById('selectedText').textContent = 'เลือกคณะ';
+
+    let selectedTextElement = document.getElementById('selectedText');
+    selectedTextElement.style.color = '#8e8e8e';
+    selectedTextElement.textContent = 'เลือกคณะ';
 }
 

@@ -27,7 +27,9 @@ h1{
     0%{-webkit-transform:translate(0px, 100px); opacity: 0;}
     100%{-webkit-transform:translate(0px, 0); opacity: 1;}
   }
-
+input[type="text"]{
+    padding: 0px 10px;
+}
 input:focus{
     outline: none;
 }

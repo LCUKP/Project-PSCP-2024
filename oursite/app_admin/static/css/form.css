@@ -142,6 +142,8 @@ textarea:focus{
     border: none;
     cursor: pointer;
     border: 0.5px solid #007bff;
+    font-size: 15px;
+    color: #8e8e8e;
     border-radius: 5px;
     max-width: 200px;
     width: 200px;
