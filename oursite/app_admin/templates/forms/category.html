@@ -6,20 +6,53 @@
 {% block content %}
     <div class="container">
         <div class="item">
-            <h1 class="kanit-regular">Add Category</h1>
-        </div>
-        <div class="item">
             <form method = "post" action = "add-room">
+                <h1 style="font-weight: bold; text-align: left;">เพิ่มหมวดหมู่ห้อง</h1>
                 {% csrf_token %}
-                <label for="name">Category Name :</label>
-                <input type="text"  name="catname" ><br>
-                <label for="permission">Permission :</label>
-                <select name="fac">
-                    {% for faculty in facultys %}
-                    <option value ="{{faculty.facid}}">{{faculty.facname}}</option>
-                    {% endfor %}
-                </select><br>
-                <input type="submit" value="บันทึก">
+
+                <div class="input-box">
+                <div>
+                <label for="catname"  class="input-label">ชื่อหมวดหมู่</label><br>
+                <input type="text"  name="catname" class="input-value" required><br>
+                </div>
+                <br>
+                <label for="permission" class="input-label">ผู้ใช้ที่ได้รับอนุญาต</label><br>
+                <div class="dropdown">
+                    <button class="dropbtn" type="button" id="selectedText" onclick="toggleDropdown()">เลือกคณะ</button>
+                    <div class="dropdown-content" id="dropdownMenu">
+                        <button type="button" class="clear-btn" onclick="clearSelection()">Clear</button>
+                       {% for faculty in facultys %}
+                        <label>
+                            <input type="checkbox" name="fac" value="{{faculty.facid}}" onchange="updateSelection()">
+                            {{faculty.facname}}
+                        </label><br>
+                        {% endfor %}
+                    </div>
+                </div>
+                <br>
+                </div>
+
+                <div>
+                    <label for="address"  class="input-label">สถานที่</label><br>
+                    <input type="text"  name="catname" class="input-value" required><br>
+                    </div>
+                    <br>
+                    <label for="address"  class="input-label">เวลาเปิด-ปิด</label><br>
+                    <div style="display: flex; align-items: center;">
+                        <input type="time"  name="address" class="input-value" required><br>
+                        <p style="color: #007bff;">ถึง</p>
+                        <input type="time"  name="address" class="input-value" required><br>
+                </div>
+                <br>
+                <div style="float: none;">
+                    <span class="input-label">หมายเหตุ</span><br>
+                    <textarea class="annotation" name="note"></textarea>
+                </div>
+
+                <div class="pad-but">
+                    <input type="submit" value="บันทึก" id="submitbt" onclick="return confirm('ต้องการบันทึกใช่หรือไม่')">
+                    <input type="button" value="ยกเลิก" id="cancelbt">
+                </div>
             </form>
         </div>
     </div>

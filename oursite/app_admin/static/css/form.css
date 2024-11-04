@@ -99,6 +99,16 @@ textarea:focus{
     border: 0.5px solid #007bff;
     border-radius: 5px;
 }
+.addcatagory-select{
+    cursor: pointer;
+    transition: 0.3s;
+    width: 210px;
+    height: 40px;
+    font-size: 15px;
+    background-color: transparent;
+    border: 0.5px solid #007bff;
+    border-radius: 5px;
+}
 
 .annotation{
     transition: 0.3s;
@@ -119,6 +129,52 @@ textarea:focus{
     border-bottom: 0.5px solid #007bff;
 }
 
+.dropdown {
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Adjusts the width to fit the container */
+}
+
+.dropbtn {
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border: 0.5px solid #007bff;
+    border-radius: 5px;
+    max-width: 200px;
+    width: 200px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#dropdownMenu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+.clear-btn {
+    margin-top: 10px;
+    background-color: #d9534f; /* Red background for emphasis */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: block;
+    width: 100%; /* Makes the button span the dropdown width */
+}
+
 
 
 /*Responsive*/
@@ -126,11 +182,9 @@ textarea:focus{
     .input-regis{
         float: none;
     }
-    .input-value{
-        width: 350px;
-    }
-    .catagory-select{
-        width: 300px;
+
+    .catagory-select,.addcatagory-select, .input-value{
+        width: 280px;
     }
     .catagory-select option{
         font-size: 10px;
@@ -139,12 +193,12 @@ textarea:focus{
 
 @media only screen and (max-width:768px){
     .input-value{
-        width: 300px;
+        width: 280px;
     }
-    .catagory-select{
-        width: 300px;
+    .catagory-select, .addcatagory-select{
+        width: 280px;
     }
-    .catagory-select option{
+    .catagory-select option, .addcatagory-select option{
         font-size: 9px;
     }
     .pad-but{
@@ -172,19 +226,20 @@ textarea:focus{
     .input-value{
         width: 300px;
     }
-    .catagory-select{
+    .catagory-select,.addcatagory-select{
         width: 300px;
     }
-    .catagory-select option{
+    .catagory-select option, .addcatagory-select option{
         font-size: 9px;
     }
-    .input-box textarea{
-        width: 370px;
+    .input-box textarea, .annotation{
+        width: 330px;
     }
     .input-box input, select, textarea {
         margin: 5px;
     }
     .input-box{
+        float: none;
         width: 300px;
     }
     .addroom{
@@ -192,6 +247,5 @@ textarea:focus{
         justify-content: center;
         flex-direction: column;
     }
-
 
 }

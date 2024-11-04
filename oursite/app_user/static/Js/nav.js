@@ -9,7 +9,7 @@ menuIcon.addEventListener('click', function(event) {
     if (navLink.classList.contains('show')) {
         menuImg.src = "../static/icon/close.png";
         menuImg.classList.add('rotate');
-    } 
+    }
     else {
         menuImg.src = "../static/icon/menu.png";
         menuImg.classList.remove('rotate');
@@ -25,32 +25,13 @@ document.addEventListener('click', function(event) {
     }
 });
 
-const overlay = document.getElementById('popup');
+/* const overlay = document.getElementById('popup');
 
 overlay.addEventListener('click', function(event) {
     if (event.target === overlay) {
         window.location.hash = '';
     }
-});
+}); */
 
 
 
-//Upload picture in Register form
-const fileInput = document.getElementById("fileInput");
-const uploadImage = document.getElementById("uploadImage");
-
-uploadImage.addEventListener("click", () => {
-    fileInput.click();
-});
-
-
-fileInput.addEventListener("change", (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            uploadImage.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    }
-});

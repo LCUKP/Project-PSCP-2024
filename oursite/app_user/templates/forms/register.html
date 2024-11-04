@@ -7,11 +7,11 @@
     <div class="container">
         <h1 style="font-weight: bold; text-align: center;">Sign up</h1>
         <img src="../static/icon/pfp.png" alt="Upload" id="uploadImage" class="upload-image">
-       
+        <input type="file" accept="image/*" name="img" id="fileInput" form="regiteration" required>
         <div class="item">
-            <form method = "post" action="register" enctype="multipart/form-data" class="addroom">
+            <form method = "post" action="register" enctype="multipart/form-data" class="addroom" id="regiteration">
                 {% csrf_token %}
-                <input type="file" accept=".png, .jpg, .jpeg" name="img" id="fileInput" required>
+                
 
             <div class="input-regis">
                 <label for="username" class="input-label">ชื่อผู้ใช้</label>
@@ -56,7 +56,7 @@
                 </select><br>
             </div>
             <div class="pad-but">
-                <button id="submitbt" type="submit" onclick="return confirm('ต้องการยืนยันใช่หรือไม่')">ยืนยัน</button><a href="#"><button id="cancelbt"  type="button">ยกเลิก</button></a>
+                <button id="submitbt" type="submit" onclick="return confirm('ต้องการยืนยันใช่หรือไม่')">ยืนยัน</button><a href="/"><button id="cancelbt"  type="button">ยกเลิก</button></a>
             </div>
             </form>
         </div>

@@ -10,49 +10,54 @@
         {% csrf_token %}
         <h1 style="font-weight: bold; text-align: left;">เพิ่มห้อง</h1>
         <div class="input-box">
-            <div>
             <span class="input-label">ชื่อห้อง</span><br>
             <input class="input-value" type="text" name="roomname" required>
-            </div><br>
-            <div>
-            <span class="input-label">หมวดหมู่</span><br>
+            <br>
+            <div style="margin-top: 10px;">
+                <label for="permission" class="input-label">การอนุมัติสิทธิ์เข้าใช้งาน</label><br>
+                <input type="radio" id="true" name="approval" value="true">
+                <label for="true" style="color: green;">ต้องรออนุมัติ</label><br>
+                <input type="radio" id="false" name="approval" value="false">
+                <label for="false" style="color: red;">ไม่ต้องรออนุมัติ</label>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label for="name"  class="input-label">สถานที่</label><br>
+                <input type="text"  name="address" class="input-value" required><br>
+            </div>
+
+
+        </div>
+            <label class="input-label" for="catagory">หมวดหมู่</label><br>
             <select name="catagory" id="" class="catagory-select" required>
                 <option value="เลือกหมวดหมู่"></option>
                 {% for cat in all_cat %}
                 <option value ="{{cat.id}}">{{cat.catname}}</option>
                 {% endfor %}
               </select>
-        </div>
-        <div style="margin-top: 10px;">
-            <label for="permission" class="input-label">การอนุมัติสิทธิ์เข้าใช้งาน</label><br>
-            <input type="radio" id="true" name="approved" value="true">
-         <label for="true" style="color: green;">ต้องรออนุมัติ</label><br>
-                <input type="radio" id="false" name="unapproved" value="false">
-              <label for="false" style="color: red;">ไม่ต้องรออนุมัติ</label>
-        </div></div>
-        <div style="margin-bottom: 10px;">
-        <label for="name"  class="input-label">สถานที่</label><br>
-        <input type="text"  name="address" class="input-value" required><br>
-        </div>
-        <div style="margin-bottom: 10px;">
-            <label for="timelenght"  class="input-label">ระยะเวลา</label><br>
-            <input type="number"  name="timelenght" default = 1 min = 1 max = 24 class="input-value" required><br>
+        
+            <div style="margin-bottom: 10px;">
+                <label for="timelenght"  class="input-label" >ระยะเวลา</label><br>
+                <input type="number" id="Num" name="timelenght" default = 1 min = 1 max = 24 class="input-value" required><br>
             </div>
-        {% comment %} <div>
+
+
+
+
+        {% comment %} 
             <span class="input-label">เวลาเปิด-ปิด</span><br><div class="pos">
                 <input type="number" min= 0 max = 24 class="input-time" name = "start_hour"><p style="font-size:20px; color: #007bff;" required>:</p><input type="number" min= 0 max= 60 default = 0 name = "start_minute" class="input-time" required> 
               <p style="font-size:20px; color: #007bff; margin: 0px 5px;">ถึง</p>
               <input type="number" min= 0 max = 24 name = "end_hour" class="input-time" required><p style="font-size:20px; color: #007bff;">:</p><input type="number" min= 0 max = 60 default = 0 name = "end_minute" class="input-time" required>
-   </div> {% endcomment %}
-        </div></div><br>
+    {% endcomment %}
 
         <div class="input-box">
             <input class="input-label" type="file" name="img" multiple required><br><br>
-            <div>
-                <span class="input-label">หมายเหตุ</span><br>
-                <textarea class="annotation" name="note"></textarea>
-            </div>
-        </div>
+            
+            <span class="input-label">หมายเหตุ</span><br>
+            <textarea class="annotation" name="note"></textarea>
+        </div>    
+        
     </form>
     <div class="pad-but">
         <button id="submitbt" type="submit" form="addroom-form" onclick="return confirm('ต้องการบันทึกใช่หรือไม่')">บันทึก</button><a href="#"><button id="cancelbt"  type="button">ยกเลิก</button></a>
