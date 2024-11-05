@@ -14,6 +14,7 @@ footer{
     font-style: normal;
     margin-top: 5px;
     bottom: 0;
+    z-index: 997;
 }
 .made-by{
     list-style: none;

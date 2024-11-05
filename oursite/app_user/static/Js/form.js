@@ -70,3 +70,19 @@ function clearSelection() {
     selectedTextElement.textContent = 'เลือกคณะ';
 }
 
+
+
+
+//open popup how to use in index.html
+function how_to_use() {
+    let popup = document.getElementById('howto');
+    let overlay = document.getElementById('overlaybg');
+    
+    if (popup.style.display === 'none' || popup.style.display === '') {
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+    } else {
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+}
