@@ -21,7 +21,7 @@
     <h1 class="res-head">เลือกประเภทห้อง</h1>
     <div class="reserv-container">
         {% for cat in all_category %}
-        <a href="selectroom/{{cat.id}}">
+        <a href="selectroom?catid={{cat.id}}">
         <div class="card img-card" style="background-image: url('../..{{cat.img.url}}');">
             <div class="card-overlay">
                 <p class="card-title">{{ cat.catname }}</p>

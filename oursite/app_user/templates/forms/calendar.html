@@ -10,7 +10,10 @@
     <h1 class="cal-text">คลิกเพื่อเลือกวัน</h1>
     <div class="calendar-container">
         <div class="calendar-month">
-            <h1>มกรายน 2999</h1>
+            <div>
+                <h1 id = "month" style="display: inline;">{{ month }}</h1>
+                <h1 style="display: inline;">{{ years }}</h1>
+            </div>
             <ul>
                 <li class="prv"><button id="prev-mth">&lt;</button></li>
                 <li class="nxt"><button id="next-mth">&gt;</button></li>
@@ -29,51 +32,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for week in dates %}
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
+                        {% for day in week %}
+                            {% if day != 0 %}
+                                <td><a style="color:black;display: block; width: 100%; height: 100%; text-align: center;" \
+                                    href="time?catid={{ catid }}&roomid={{ roomid }}&date={{ day }}&month={{ month }}&years={{ years }}">{{ day }}</a></td>
+                            {% else %}
+                                <td></td>
+                            {% endif %}
+                        {% endfor %}
                     </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                    </tr>
-                    <tr>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                        <td>31</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
     </div>
@@ -82,4 +52,51 @@
         <span>&#128308;เต็ม</span>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#next-mth").click(function () {
+            var data = "p";
+            let month = $("#month").text();
+
+            $.ajax({
+                url: "calendar",  // ใช้ URL ที่เราได้ตั้งชื่อไว้ใน urls.py
+                type: "POST",
+                data: {
+                    data: data,
+                    month: month,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'  // เพิ่ม CSRF token
+                },
+                success: function (response) {
+                    //console.log("Response data:", response);
+                    $("body").html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.log("เกิดข้อผิดพลาด: " + xhr.responseJSON.error)
+                }
+            });
+        });
+
+        $("#prev-mth").click(function () {
+            var data = "s";
+            let month = $("#month").text();
+
+            $.ajax({
+                url: "calendar",  // ใช้ URL ที่เราได้ตั้งชื่อไว้ใน urls.py
+                type: "POST",
+                data: {
+                    data: data,
+                    month: month,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'  // เพิ่ม CSRF token
+                },
+                success: function (response) {
+                    $("body").html(response);
+                },
+                error: function (xhr, status, error) {
+                    console.log("เกิดข้อผิดพลาด: " + xhr.responseJSON.error)
+                }
+            });
+        });
+
+    });
+</script>
 {% endblock %}

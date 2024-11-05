@@ -1,3 +1,4 @@
+import calendar, datetime
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app_user.models import user,faculty,major
@@ -49,14 +50,47 @@ def register(request) :
     all_major = major.objects.all()
     return render(request,"forms/register.html",{"all_faculty":all_faculty,"all_major":all_major})
 
-def calendar(request) :
-    return render(request,"forms/calendar.html")
+def calendar_view(request) :
+    catid = request.GET.get("catid")
+    roomid = request.GET.get("roomid")
+    year = int(datetime.datetime.now().strftime("%Y"))
+    month = int(datetime.datetime.now().strftime("%m"))
+    months_thai = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]
+    if request.method == "POST":
+        data = request.POST.get("data")
+        data_month = (months_thai.index(request.POST.get("month")))+1
+        if data == "p" :
+            data_month  += 1
+            if data_month > 12 :
+                data_month = 1
+                year += 1
+            month = data_month
+            print("ppp",month)
+        elif data == "s" :
+            if data_month > int(datetime.datetime.now().strftime("%m")) :
+                data_month  -= 1
+            month = data_month
+            print("sss",month)
+    months = int(datetime.datetime(year, month, 1).strftime("%m"))-1
+    years = int(datetime.datetime(year, month, 1).strftime("%Y"))+543
+    month_days = calendar.monthcalendar(year, month)
+    dates = [week for week in month_days]
+    return render(request,"forms/calendar.html",{"dates":dates,"month":months_thai[months],"years":years,"months_thai":months_thai,"catid":catid,"roomid":roomid})
 
 def login(request) :
     pass
 
 def time(request):
-    return render(request,"forms/time.html")
+    months_thai = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]
+    days_in_thai = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"]
+    catid = request.GET.get("catid")
+    roomid = request.GET.get("roomid")
+    date = int(request.GET.get("date"))
+    month = months_thai.index(request.GET.get("month"))
+    years = int(request.GET.get("years"))-543
+    day = int(datetime.datetime(years,month,date).strftime("%w"))
+    # print(date,month,years,catid,roomid)
+    return render(request,"forms/time.html",{"date":date,"month":months_thai[month],"years":years,"day":days_in_thai[day]})
 
 def test(request) :
     return render(request,"forms/test.html")
@@ -70,6 +104,7 @@ def test_register(request):
 def reservation(request):
     return render(request,"forms/reservation.html")
 
-def selectroom(request, catid):
+def selectroom(request):
+    catid = request.GET.get("catid")
     all_room = room.objects.filter(id = catid)
     return render(request,"forms/selectroom.html",{"all_room":all_room})

@@ -10,12 +10,14 @@
     <h1 class="room-head">เลือกห้อง</h1>
     <div class="room-container">
         {% for room in all_room %}
+        <a href="calendar?catid={{room.category.id}}&roomid={{room.id}}">
         <div class="card" id="first-room" style="background-image: url('../..{{room.img.url}}');">
             <div class="card-overlay">
                 <p class="card-title">{{ room.roomname }}</p>
                 <p class="card-sub">{{ room.category }}</p>
             </div>
         </div>
+        </a>
         {% endfor %}
     </div>
 </div>

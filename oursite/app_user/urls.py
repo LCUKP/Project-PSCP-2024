@@ -9,10 +9,10 @@ urlpatterns = [
     path('contact',views.contact),
     path('report',views.report),
     path('register', views.register),
-    path('calendar',views.calendar),
+    path('calendar',views.calendar_view),
     path('time',views.time),
     path('test_register', views.test_register),
     path('test', views.test),
     path('reservation',views.reservation),
-    path('selectroom/<str:catid>',views.selectroom)
+    path('selectroom',views.selectroom)
 ]
