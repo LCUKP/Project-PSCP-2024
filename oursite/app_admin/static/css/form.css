@@ -1,6 +1,6 @@
 
 .input-value{
-    transition: 0.3s;
+    -webkit-transition: 0.3s;
     width: 170px;
     height: 40px;
     font-size: 15px;
@@ -11,7 +11,7 @@
 }
 .input-regis{
     display: -webkit-flex;
-    flex-direction: column;
+    -webkit-flex-direction: column;
     float: left;
 }
 .pos{
@@ -33,7 +33,7 @@
 }
 #submitbt{
     cursor: pointer;
-    transition: 0.3s;
+    -webkit-transition: 0.3s;
     border: 0.5px solid transparent;
     color: white;
     width: 120px;
@@ -55,7 +55,7 @@
 #cancelbt{
     font-weight: 500;
     cursor: pointer;
-    transition: 0.3s;
+    -webkit-transition: 0.3s;
     border: 0.5px solid transparent;
     color: white;
     width: 120px;
@@ -75,7 +75,7 @@
     float: none;
     margin-top: 30px;
     display: -webkit-flex;
-    justify-content: center;
+    -webkit-justify-content: center;
 }
 textarea{
     display: block;
@@ -91,7 +91,7 @@ textarea:focus{
 }
 .catagory-select{
     cursor: pointer;
-    transition: 0.3s;
+    -webkit-transition: 0.3s;
     width: 210px;
     height: 40px;
     font-size: 15px;
@@ -101,7 +101,7 @@ textarea:focus{
 }
 .addcatagory-select{
     cursor: pointer;
-    transition: 0.3s;
+    -webkit-transition: 0.3s;
     width: 210px;
     height: 40px;
     font-size: 15px;
@@ -111,7 +111,7 @@ textarea:focus{
 }
 
 .annotation{
-    transition: 0.3s;
+    -webkit-transition: 0.3s;
     width: 600px;
     height: 90px;
     font-size: 18px;
@@ -121,7 +121,7 @@ textarea:focus{
 }
 .input-time{
     cursor: pointer;
-    transition: 0.3s;
+    -webkit-transition: 0.3s;
     height: 60px;
     font-size: 18px;
     border: none;
@@ -177,7 +177,92 @@ textarea:focus{
     width: 100%; /* Makes the button span the dropdown width */
 }
 
+.form-login label{
+    text-align: left;
+    color: #007bff;
+    font-size: 20px;
+    font-weight: 500;
+}
 
+.form-login input{
+    -webkit-transition: 0.3s;
+    width: 170px;
+    height: 40px;
+    font-size: 15px;
+    background-color: transparent;
+    border: 0.5px solid #007bff;
+    margin: 10px;
+}
+.form-login input[type="password"]{
+    padding: 0 10px;
+}
+#no-accbtn{
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: transparent;
+    margin-top: 10px;
+    color: #007bff;
+    -webkit-transition: 0.3s;
+    border: 1px solid #007bff;
+}
+
+#no-accbtn1{
+    display: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: transparent;
+    color: #007bff;
+    -webkit-transition: 0.3s;
+    text-align: left;
+}
+
+#no-accbtn:hover{
+    color: white;
+    background-color: #007bff;
+}
+
+.form-login button{
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #007bff;
+    margin-top: 10px;
+    color: white;
+    -webkit-transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.form-login button:hover{
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.pad-butlogin{
+    float: none;
+    margin-top: 30px;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+}
+
+.login-box-content{
+    display: -webkit-flex;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 5px #e7e7e7;
+}
+.login-box-content div{
+    margin: 30px;
+}
+.login-box-content div:first-child{
+    border: none;
+    border-right: 2px solid rgb(218, 218, 218);
+    padding-right: 40px;
+}
 
 /*Responsive*/
 @media only screen and (max-width:1200px){
@@ -240,8 +325,21 @@ textarea:focus{
     }
     .addroom{
         display: -webkit-flex;
-        justify-content: center;
-        flex-direction: column;
+        -webkit-justify-content: center;
+        -webkit-flex-direction: column;
     }
 
+    .login-box-content div:first-child{
+        display: none;
+    }
+    .login-box-content{
+        width: 330px;
+    }
+    .login-box-content input{
+        width: 85%;
+    }
+    #no-accbtn1{
+        display: block;
+        padding: 0;
+    }
 }

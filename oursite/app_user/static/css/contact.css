@@ -3,9 +3,9 @@
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
     align-items: center;
     width: 230px;
     height: 250px;

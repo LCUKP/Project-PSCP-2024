@@ -7,8 +7,8 @@
     z-index: 999;
     background-color: white;
     box-shadow: 0 0 15px #007bff;
-    display: flex;
-    justify-content: space-between;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -63,7 +63,7 @@ a{
   transform: rotate(90deg);
 }
 .menu{
-    display: flex;
+    display: -webkit-flex;
     align-items: center;
     margin-right: 60px;
 }
@@ -88,14 +88,14 @@ a{
   z-index: 99999999999;
   margin-right: 60px;
   display: none;
-  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
   transition: opacity 0.3s ease;
   position: fixed;
   left: 80%;
   top: 10%;
 }
 .link.show{
-  display: flex;
+  display: -webkit-flex;
   opacity: 1;
 }
 .link ul{
