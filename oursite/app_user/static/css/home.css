@@ -117,17 +117,22 @@ button:hover{
 
 #howto{
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: white;
     z-index: 999;
-    top: 20%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 700px;
     padding: 20px;
     border-radius: 2rem;
     box-shadow: 0 0 15px 5px #919191;
+    animation:fadeIn 0.3s ease backwards;
 }
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+  }
 
 .overlaybd {
     display: none;
@@ -339,5 +344,10 @@ button:hover{
     }
     .second-section h1{
         font-size: 15px;
+    }
+    #howto{
+        width: 320px;
+        height: 450px;
+        overflow: auto;
     }
   }

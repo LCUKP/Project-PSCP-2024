@@ -1,4 +1,6 @@
-
+*{
+    scroll-behavior: smooth;
+}
 
 h1{
     padding-bottom: 15px;
