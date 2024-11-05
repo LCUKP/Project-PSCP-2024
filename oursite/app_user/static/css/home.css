@@ -110,6 +110,7 @@ button:hover{
     max-width: 700px;
 }
 .paragraph{
+    text-align: left;
     background-color: #e0edff;
     padding: 20px;
     border-radius: 2rem;
