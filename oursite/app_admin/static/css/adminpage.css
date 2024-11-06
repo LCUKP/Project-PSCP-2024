@@ -1,0 +1,45 @@
+.admintitle{
+    color: #007bff;
+    display: flex;
+    align-items: center;
+}
+.admintitle h2{
+    margin: 25px;
+}
+
+.admintitle button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 115px;
+    color: white;
+    background-color: #007bff;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.admintitle button:hover {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+.admintitle table{
+    border-collapse: collapse;
+}
+.admintitle td{
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #007bff;
+    padding: 10px;
+}
+
+@media only screen and (max-width:600px){
+    .admintitle{
+        font-size: 10px;
+    }
+    .admintitle button,th{
+        font-size: 7px;
+    }
+}

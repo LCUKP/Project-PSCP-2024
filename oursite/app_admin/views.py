@@ -5,6 +5,8 @@ from app_admin.models import category
 # Create your views here.
 def index(request) :
     return render(request,"adminpage.html")
+def admin_manage(request) :
+    return render(request,"admin_manager.html")
 def form_cat(request) :
     facultys = faculty.objects.all()
     return render(request,"forms/category.html",{"facultys":facultys})

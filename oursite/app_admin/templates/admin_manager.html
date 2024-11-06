@@ -1,0 +1,39 @@
+{% extends "00-base.html" %}
+
+{% block title %}
+<title>Home Admin</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="admintitle" >
+        <a href="/admin/add-room"><button>เพิ่มหมวดหมู่</button></a>
+        <a href="/admin/add-category"><button>เพิ่มห้อง</button></a>
+    </div>
+    <div class="admintitle">
+        <table>
+            <tr>
+                <th><h2>หมวดหมู่</h2></th>
+                <th><h2>จำนวนห้องในหมวดหมู่</h2></th>
+                <th><h2>ผู้ดูแล</h2></th>
+            </tr>
+            <tr>
+                <td>Creative room</td>
+                <td>4</td>
+                <td>Admin01</td>
+            </tr>
+            <tr>
+                <td>Laboratory</td>
+                <td>2</td>
+                <td>Admin02</td>
+            </tr>
+            <tr>
+                <td>Lecture room</td>
+                <td>3</td>
+                <td>Admin03</td>
+            </tr>
+        </table>
+    </div>
+    
+</div>
+{% endblock %}

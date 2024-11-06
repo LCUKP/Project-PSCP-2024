@@ -7,6 +7,7 @@
     {% block title %}
     {% endblock %}
     <link rel="stylesheet" href="../static/css/form.css">
+    <link rel="stylesheet" href="../static/css/adminpage.css">
     <link rel="stylesheet" href="../static/css/nav.css">
     <link rel="stylesheet" href="../static/css/footer.css">
     <link rel="stylesheet" href="../static/css/style.css">
@@ -23,7 +24,7 @@
   <div class="nav">
       <a class="brand" href="/"><h3>จองห้อง</h3></a>
       <div class="menu">
-          <a href="#popup"><button class="login">Log in</button></a>
+          <a href="/admin/"><button class="login">Log in</button></a>
           <a href="#" id="menu-icon">
               <img id="menu-img" src="../static/icon/menu.png" alt="Menu">
           </a>
@@ -40,21 +41,6 @@
   </ul>
 </div>
 
-<!--Login form-->
-<div class="overlay" id="popup">
-    <div class="popup-login">
-        <h1 style="text-align: center; margin-top: 30px; color: #007bff;">จองห้อง</h1>
-        <form method="POST" action="">
-            <input type="text" placeholder="   ชื่อผู้ใช้"><br>
-            <input type="password" placeholder="   รหัสผ่าน" id="password"><br>
-            <input type="submit" id="btn-login" value="เข้าสู่ระบบ">
-            <a href="register"><p style="color: #a3a3a3; font-size: 13px; text-decoration: underline; margin-bottom: 10px;">ยังไม่มีบัญชี ?</p></a>
-        </form>
-        <p style="color: #a3a3a3; text-align: center; font-size: 13px;">หรือ เข้าสู่ระบบด้วย</p>
-        <img src="../static/icon/google.png" alt="Login with Google"/>
-        <a class="close" href="#">&times;</a>
-    </div>
-  </div> <!--Login form last line-->
 
 
 

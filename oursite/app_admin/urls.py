@@ -4,5 +4,6 @@ from app_admin import views
 urlpatterns = [
     path("",views.index),
     path("add-category",views.form_cat),
-    path("add-room",views.form_room)
+    path("add-room",views.form_room),
+    path("manage-room",views.admin_manage)
 ]
