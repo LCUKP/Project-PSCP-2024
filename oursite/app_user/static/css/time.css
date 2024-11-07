@@ -90,12 +90,17 @@
     color: #007bff;
 }
 #time-cancel{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
     border: 1px #000 solid;
     background-color: #fff;
     color: #000;
+    transition: 0.3s;
 }
 #time-cancel:hover{
-    border: none;
+    border: 1px solid transparent;
 }
 .time-description table{
     font-size: 18px;

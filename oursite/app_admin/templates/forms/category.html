@@ -6,21 +6,17 @@
 {% block content %}
     <div class="container">
         <div class="item">
-            <form method = "post" action = "add-category" enctype="multipart/form-data">
+            <form method = "post" action = "add-category" enctype="multipart/form-data" id = "adc">
                 <h1 style="font-weight: bold; text-align: left;">เพิ่มหมวดหมู่ห้อง</h1>
                 {% csrf_token %}
+                <div style="float: left;" id="nof">
+                    <label for="catname"  class="input-label">ชื่อหมวดหมู่</label><br>
+                    <input type="text"  name="catname" class="input-value" required><br>
 
-                <div class="input-box">
-                    <input class="input-label" type="file" name="img" multiple required>
-                <div>
-                <label for="catname"  class="input-label">ชื่อหมวดหมู่</label><br>
-                <input type="text"  name="catname" class="input-value" required><br>
-                </div>
-                <br>
-                <label for="fac" class="input-label">ผู้ใช้ที่ได้รับอนุญาต</label><br>
-                <div class="dropdown">
+                    <div class="dropdown">
+                        <label for="fac" class="input-label">ผู้ใช้ที่ได้รับอนุญาต</label><br>
                     <button class="dropbtn" type="button" id="selectedText" onclick="toggleDropdown()">เลือกคณะ</button>
-                    <div class="dropdown-content" id="dropdownMenu">
+                        <div class="dropdown-content" id="dropdownMenu">
                         <button type="button" class="clear-btn" onclick="clearSelection()">Clear</button>
                        {% for faculty in facultys %}
                         <label>
@@ -28,23 +24,28 @@
                             {{faculty.facname}}
                         </label><br>
                         {% endfor %}
+                        </div>
                     </div>
                 </div>
-                <br>
-                </div>
+                
+                
                 <div>
-                    <label for="address"  class="input-label">สถานที่</label><br>
-                    <input type="text"  name="address" class="input-value" placeholder="Ex. คณะไอที, ตึกโหลชั้น 2" required><br>
-                    </div>
-                    <br>
-                    <label for="businesshours"  class="input-label">เวลาเปิด-ปิด</label><br>
-                    <div style="display: flex; align-items: center;">
-                        <input type="time"  name="businesshoursin" class="input-value" required><br>
-                        <p style="color: #007bff;">ถึง</p>
-                        <input type="time"  name="businesshoursout" class="input-value" required><br>
+                    <div>
+                        <label for="address"  class="input-label">สถานที่</label><br>
+                        <input type="text"  name="address" class="input-value" placeholder="Ex. คณะไอที, ตึกโหลชั้น 2" required><br>
+                        </div>
+                        <div>
+                            <label for="businesshours"  class="input-label">เวลาเปิด-ปิด</label><br>
+                            <div style="display: flex; align-items: center;">
+                            <input type="time"  name="businesshoursin" class="input-value" required><br>
+                            <p style="color: #007bff;">ถึง</p>
+                            <input type="time"  name="businesshoursout" class="input-value" required><br>
+                        </div>
+                        
                 </div>
                 <br>
                 <div style="float: none;">
+                    <input class="input-label" type="file" name="img" required><br><br>
                     <span class="input-label">หมายเหตุ</span><br>
                     <textarea class="annotation" name="note"></textarea>
                 </div>

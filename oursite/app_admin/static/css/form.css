@@ -342,4 +342,7 @@ textarea:focus{
         display: block;
         padding: 0;
     }
+    #adc .input-label{
+        font-size: 15px;
+    }
 }
