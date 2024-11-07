@@ -17,7 +17,10 @@
                 <form action="booking" method="get">
                     {% csrf_token %}
                     {% for time in lenght %}
-                        <div class="time-slot"><input type="checkbox" id="" name="time" value="{{ time }}:00 - 12:00 น."> {{ time }}:00 - 12:00 น.</div>
+                        <div class="time-slot">
+                            <input type="checkbox" id="time{{ forloop.counter }}" name="time" value="{{ time }}:00 - 12:00 น.">
+                            <label for="time{{ forloop.counter }}">{{ time }}:00 - 12:00 น.</label>
+                        </div>
                     {% endfor %}
                 </form>
                 {% comment %} <div class="time-slot">11:00 - 12:00 น.</div> {% endcomment %}
@@ -32,7 +35,7 @@
                     <p>แอดมิน {{ room.admin.name }} </p>
                 </div>
             </div>
-            <div class="time-save"><input id="time-save" type="button" value="บันทึก"><input id="time-cancel" type="button" value="ยกเลิก"></div>
+            <div class="time-save"><input id="time-save" type="button" value="บันทึก"><a href="/calendar" id="time-cancel">ยกเลิก</a></div>
         </div>
     </div>
 </div>
