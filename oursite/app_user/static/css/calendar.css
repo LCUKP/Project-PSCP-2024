@@ -85,12 +85,31 @@
     float: left;
 }
 
-@media only screen and (max-width:768px){
-    .calendar{
-        width: 650px;
-        height: 300px;
+@media only screen and (max-width:1200px){
+    .calendar-container, .calendar{
+        width: auto;
     }
     .calendar th{
         font-size: 16px;
     }
+}
+
+@media only screen and (max-width:768px){
+    .calendar, .calendar-container{
+        width: auto;
+    }
+    .calendar th{
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width:600px){
+    .calendar-container{
+        width: 360px;
+    }
+    .calendar th{
+        font-size: 14px;
+    }
+
 }
