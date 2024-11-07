@@ -10,23 +10,43 @@
 }
 #book-date{
     color: #007bff;
+    text-align: left;
 }
 .select-time{
     font-size: 48px;
     color: #007bff;
 }
-.time-block{
+.time-block {
     padding-top: 10px;
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    flex-wrap: wrap;
     margin-top: 20px;
-    column-gap: 50px;
+    overflow-x: auto;
+    column-gap: 20px;
 }
-.time-slot{
+
+.time-block form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.time-block input[type="checkbox"] {
+    display: none;
+}
+
+.time-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-slot label {
     width: 148px;
     height: 50px;
     display: flex;
@@ -40,10 +60,12 @@
     border: 2px solid #007bff;
     transition: background-color 0.3s, color 0.3s;
 }
-.time-slot:hover{
+
+.time-block input[type="checkbox"]:checked + label {
     background-color: #007bff;
-    color: #fff;
+    color: white;
 }
+
 .time-slot-disable{
     width: 148px;
     height: 50px;
@@ -73,8 +95,7 @@
     column-gap: 10px;
 }
 .time-save input[type="button"]{
-    width: 20%;
-    padding: 10px;
+    padding: 10px 30px;
     font-size: 20px;
     border: 1px #007bff solid;
     border-radius: 8px;
@@ -91,7 +112,7 @@
 }
 #time-cancel{
     font-size: 20px;
-    padding: 10px;
+    padding: 10px 30px;
     border-radius: 8px;
     cursor: pointer;
     border: 1px #000 solid;
@@ -131,8 +152,15 @@
         padding-top: 20px;
     }
     .time-save input[type="button"]{
-        width: 30%;
-        padding: 10px;
         font-size: 16px;
+    }
+    #time-cancel{
+        font-size: 16px;
+    }
+    .time-slot{
+        font-size: 13px;
+    }
+    #book-date{
+        font-size: 23px;
     }
 }

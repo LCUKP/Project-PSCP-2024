@@ -59,6 +59,14 @@ a{
     margin-left: 10px;
     transition: transform 0.3s ease;
 }
+
+.menu p{
+  color: #007bff;
+  font-weight: bold;
+  margin: 10px;
+  font-size: 20px;
+}
+
 .nav img.rotate{
   transform: rotate(90deg);
 }
