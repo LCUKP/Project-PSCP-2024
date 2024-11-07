@@ -9,6 +9,8 @@ def index(request) :
     return render(request,"adminpage.html")
 def admin_manage(request) :
     return render(request,"admin_manager.html")
+def history(request) :
+    return render(request,"booking_history.html")
 def form_cat(request) :
     if request.method == "POST" :
         catname = request.POST["catname"]
