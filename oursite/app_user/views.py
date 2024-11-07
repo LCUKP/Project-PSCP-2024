@@ -86,11 +86,16 @@ def time(request):
     catid = request.GET.get("catid")
     roomid = request.GET.get("roomid")
     date = int(request.GET.get("date"))
+    cat = category.objects.get(id = catid)
+    rooms = room.objects.get(id = roomid)
+    time = (category.objects.get(id = catid).time).split("-")
+    lenght = [f"{i:0>2}" for i in range(int(time[0][:2]),int(time[1][:2])+1,1)]
+    print(lenght)
     month = months_thai.index(request.GET.get("month"))
     years = int(request.GET.get("years"))-543
     day = int(datetime.datetime(years,month,date).strftime("%w"))
     # print(date,month,years,catid,roomid)
-    return render(request,"forms/time.html",{"date":date,"month":months_thai[month],"years":years,"day":days_in_thai[day]})
+    return render(request,"forms/time.html",{"date":date,"month":months_thai[month],"years":years,"day":days_in_thai[day],"cat":cat,"room":rooms,"lenght":lenght})
 
 def test(request) :
     return render(request,"forms/test.html")
