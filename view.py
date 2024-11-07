@@ -36,3 +36,5 @@ def form_room(request) :
     else :
         return render(request,"forms/rooms.html")
     
+def admin_manage(request) :
+    return render(request,"admin_manager.html")

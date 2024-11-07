@@ -6,11 +6,12 @@
 {% block content %}
     <div class="container">
         <div class="item">
-            <form method = "post" action = "add-room">
+            <form method = "post" action = "add-category" enctype="multipart/form-data">
                 <h1 style="font-weight: bold; text-align: left;">เพิ่มหมวดหมู่ห้อง</h1>
                 {% csrf_token %}
 
                 <div class="input-box">
+                    <input class="input-label" type="file" name="img" multiple required>
                 <div>
                 <label for="catname"  class="input-label">ชื่อหมวดหมู่</label><br>
                 <input type="text"  name="catname" class="input-value" required><br>
@@ -38,9 +39,9 @@
                     <br>
                     <label for="businesshours"  class="input-label">เวลาเปิด-ปิด</label><br>
                     <div style="display: flex; align-items: center;">
-                        <input type="time"  name="businesshours" class="input-value" required><br>
+                        <input type="time"  name="businesshoursin" class="input-value" required><br>
                         <p style="color: #007bff;">ถึง</p>
-                        <input type="time"  name="businesshours" class="input-value" required><br>
+                        <input type="time"  name="businesshoursout" class="input-value" required><br>
                 </div>
                 <br>
                 <div style="float: none;">

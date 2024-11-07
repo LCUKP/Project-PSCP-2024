@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="container">
-    <form class="addroom" method="post" action="add-room" id="addroom-form">
+    <form class="addroom" method="post" action="add-room" id="addroom-form" enctype="multipart/form-data">
         {% csrf_token %}
         <h1 style="font-weight: bold; text-align: left;">เพิ่มห้อง</h1>
         <div class="input-box">
@@ -15,21 +15,21 @@
             <br>
             <div style="margin: 10px;">
                 <label for="permission" class="input-label">การอนุมัติสิทธิ์เข้าใช้งาน</label><br>
-                <input type="radio" id="true" name="permission" value="true">
+                <input type="radio" id="true" name="approved" value="true">
                 <label for="true" style="color: green;">ต้องรออนุมัติ</label><br>
-                <input type="radio" id="false" name="permission" value="false">
+                <input type="radio" id="false" name="approved" value="false">
                 <label for="false" style="color: red;">ไม่ต้องรออนุมัติ</label>
             </div>
 
             <div style="margin-bottom: 10px;">
-                <label for="roomaddress"  class="input-label">สถานที่</label><br>
-                <input type="text"  name="roomaddress" class="input-value" required><br>
+                <label for="address"  class="input-label">สถานที่</label><br>
+                <input type="text"  name="address" class="input-value" required><br>
             </div>
 
 
         </div>
             <label class="input-label" for="catagory">หมวดหมู่</label><br>
-            <select name="catagory" id="" class="catagory-select" required>
+            <select name="category" id="" class="catagory-select" required>
                 <option value="เลือกหมวดหมู่"></option>
                 {% for cat in all_cat %}
                 <option value ="{{cat.id}}">{{cat.catname}}</option>
@@ -37,8 +37,8 @@
               </select>
         
             <div style="margin: 10px;">
-                <label for="timelenght"  class="input-label" >ระยะเวลา</label><br>
-                <input type="number" id="Num" name="timelenght" default = 1 min = 1 max = 24 class="input-value" required><br>
+                <label for="timelength"  class="input-label" >ระยะเวลา</label><br>
+                <input type="number" id="Num" name="timelength" default = 1 min = 1 max = 24 class="input-value" required><br>
             </div>
 
 

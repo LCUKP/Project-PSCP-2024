@@ -19,6 +19,7 @@ class category(models.Model) :
     permission = models.CharField(max_length=255)
     address = models.CharField(max_length=255, default="Invalid")
     time = models.CharField(max_length=100, default="Invalid")
+    note = models.CharField(max_length=255, default="Invalid")
     img = models.ImageField(upload_to ='app_admin/static/img/cat/')
     admin = models.ForeignKey(admin_acc,on_delete=models.CASCADE)
     
