@@ -134,6 +134,11 @@ MEDIA_ROOT = BASE_DIR / ''
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #AUTH
+AUTHENTICATION_BACKENDS = [
+    'app_user.auth_backends.UserBackend',    # Backend สำหรับตาราง user
+    'django.contrib.auth.backends.ModelBackend',  # Backend หลักของ Django
+]
+
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"

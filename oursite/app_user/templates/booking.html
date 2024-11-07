@@ -12,10 +12,10 @@
                     <h1>Peer Tutor1</h1>
                     <img src="../static/icon/check.png" width="20" height="20" alt="checked">
                 </div>
-                <p>วัน: พฤหัสบดี ที่ 26 กันยายน 2567</p>
-                <p>เวลา: 9:00น.-13:00น.</p>
-                <p>สถานที่: Peer tutor 1 ห้อง Creative and Ideaton ชั้น 2 คณะเทคโนโลยีสารสนเทศ</p>
-                <p>ผู้ดูแล: Admin01</p>
+                <p>วัน: {{ date }}</p>
+                <p>เวลา: {{ time }}</p>
+                <p>สถานที่: {{ cat.address }}</p>
+                <p>ผู้ดูแล: {{ cat.admin }}</p>
             </div>
         </div>
     </div>

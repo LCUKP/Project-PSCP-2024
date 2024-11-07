@@ -1,8 +1,13 @@
 import calendar, datetime
+from pyexpat.errors import messages
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from app_user.models import user,faculty,major
+from app_user.models import user,faculty,major,booking
 from app_admin.models import admin_acc,category, room
+from django.contrib.auth.hashers import make_password
+
 
 # Create your views here.
 def index(request) :
@@ -14,8 +19,33 @@ def index(request) :
 def profile(request) :
     return render(request,"profile.html")
 
-def booking(request) :
-    return render(request,"booking.html")
+@login_required
+def booking_view(request) :
+    if request.method == "POST":
+        times = request.POST.getlist('time')
+        time = f"{times[0]}-{times[-1]}"
+        catid = request.GET.get("catid")
+        roomb = request.GET.get("roomid")
+        roomid = request.GET.get("roomid")
+        userid = request.user.id
+        date = "{} {} {} {}".format(
+            request.GET.get("day"),
+            request.GET.get("date"),
+            request.GET.get("month"),
+            int(request.GET.get("years")) + 543
+        )
+        book = booking.objects.create(
+            datebook = date,
+            timebook = time,
+            reason = "Invalidation",
+        )
+        cat = category.objects.get(id = catid)
+        users = user.objects.get(id=userid)
+        rooms = room.objects.get(id=roomb)
+        book.user.set([users])
+        book.room.set([rooms])
+        book.save()
+    return render(request,"booking.html",{"date":date,"time":time,"cat":cat,"room":rooms})
 
 def contact(request) :
     admins = admin_acc.objects.all()
@@ -39,7 +69,7 @@ def register(request) :
             username = username,
             name = name,
             lastname = lastname,
-            password = password,
+            password = make_password(password),
             faculty = faculty.objects.get(facid=facultys),
             img = img,
             major = major.objects.get(id=majors),
@@ -89,7 +119,7 @@ def time(request):
     cat = category.objects.get(id = catid)
     rooms = room.objects.get(id = roomid)
     time = (category.objects.get(id = catid).time).split("-")
-    lenght = [f"{i:0>2}" for i in range(int(time[0][:2]),int(time[1][:2])+1,1)]
+    lenght = [(f"{i:0>2}",f"{i+1:0>2}") for i in range(int(time[0][:2]),int(time[1][:2])+1,1)]
     print(lenght)
     month = months_thai.index(request.GET.get("month"))
     years = int(request.GET.get("years"))-543
@@ -113,3 +143,15 @@ def selectroom(request):
     catid = request.GET.get("catid")
     all_room = room.objects.filter(id = catid)
     return render(request,"forms/selectroom.html",{"all_room":all_room})
+
+# def custom_login_view(request):
+#     if request.method == "POST":
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('home')
+#         else:
+#             messages.error(request, "Invalid username or password")
+#     return render(request, 'login.html')

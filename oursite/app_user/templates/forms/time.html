@@ -14,12 +14,12 @@
             {% comment %} <div class="time-slot">11:00 - 12:00 น.</div> {% endcomment %}
             <h1 id="book-date">วัน {{ day }} ที่ {{ date }} {{ month }} {{ years }}</h1>
             <div class="time-block">
-                <form action="booking" method="get">
+                <form action="booking?day={{ day }}&date={{ date }}&month={{ month }}&years={{ years }}&catid={{ cat.id }}&roomid={{ room.id }}&userid={{ user.id }}" method="post" id="booking">
                     {% csrf_token %}
                     {% for time in lenght %}
                         <div class="time-slot">
-                            <input type="checkbox" id="time{{ forloop.counter }}" name="time" value="{{ time }}:00 - 12:00 น.">
-                            <label for="time{{ forloop.counter }}">{{ time }}:00 - 12:00 น.</label>
+                            <input type="checkbox" id="time{{ forloop.counter }}" name="time" value="{{ time.0 }}:00-{{ time.1 }}:00" required>
+                            <label for="time{{ forloop.counter }}">{{ time.0 }}:00 - {{ time.1 }}:00 น.</label>
                         </div>
                     {% endfor %}
                 </form>
@@ -35,8 +35,31 @@
                     <p>แอดมิน {{ room.admin.name }} </p>
                 </div>
             </div>
-            <div class="time-save"><input id="time-save" type="button" value="บันทึก"><a href="/calendar" id="time-cancel">ยกเลิก</a></div>
+            <div class="time-save"><input id="time-save" form="booking" type="submit" value="บันทึก"><a href="/calendar" id="time-cancel">ยกเลิก</a></div>
         </div>
     </div>
 </div>
+<script>
+    function limitCheckboxSelection(maxSelections) {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                if (checkedCount >= maxSelections) {
+                    checkboxes.forEach(cb => {
+                        if (!cb.checked) {
+                            cb.disabled = true;
+                        }
+                    });
+                } else {
+                    checkboxes.forEach(cb => cb.disabled = false);
+                }
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        limitCheckboxSelection({{ room.timelenght }});
+    });
+</script>
 {% endblock %}
