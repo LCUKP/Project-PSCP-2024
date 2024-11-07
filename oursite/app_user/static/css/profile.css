@@ -1,0 +1,33 @@
+.profile-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.profile-container{
+    box-shadow:  0 0 5px 5px #e7e7e7;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.profile-container button {
+    color: white;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 20px;
+}
+.profile-container button:hover {
+    color: #007bff;
+    background-color: transparent;
+}
+#reportpfp{
+    background-color: red;
+    border: 1px solid red;
+}
+#reportpfp:hover{
+    color: red;
+    background-color: transparent;
+}
