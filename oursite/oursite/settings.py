@@ -136,6 +136,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #AUTH
 AUTHENTICATION_BACKENDS = [
     'app_user.auth_backends.UserBackend',    # Backend สำหรับตาราง user
+    'app_user.auth_backends.AdminBackend',    # Backend สำหรับตาราง user
     'django.contrib.auth.backends.ModelBackend',  # Backend หลักของ Django
 ]
 

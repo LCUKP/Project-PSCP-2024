@@ -18,21 +18,13 @@
                 <th><h2>จำนวนห้องในหมวดหมู่</h2></th>
                 <th><h2>ผู้ดูแล</h2></th>
             </tr>
+            {% for i in cat %}
             <tr>
-                <td>Creative room</td>
-                <td>4</td>
-                <td>Admin01</td>
+                <td>{{ i.catname }}</td>
+                <td>{{ i.room_count }}</td>
+                <td>{{ i.admin.name }}</td>
             </tr>
-            <tr>
-                <td>Laboratory</td>
-                <td>2</td>
-                <td>Admin02</td>
-            </tr>
-            <tr>
-                <td>Lecture room</td>
-                <td>3</td>
-                <td>Admin03</td>
-            </tr>
+            {% endfor %}
         </table>
     </div>
     

@@ -6,13 +6,13 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="kanit-regular" style="font-weight: bold;">Hello, Chotipat!</h1>
+    <h1 class="kanit-regular" style="font-weight: bold;">Hello, {{ user.name }}!</h1>
     <div class="item">
         
         <div class="Adminprofile-container">
-            <img src="../static/icon/check.png" width="150" height="150" alt="profile image">
-            <h2>Admin01</h2>
-            <p>Name Lastname</p>
+            <img src="{{ user.img.url }}" width="150" height="150" alt="profile image">
+            <h2>{{ user.username }}</h2>
+            <p>{{ user.name }}</p>
             <div style="margin-top: 30px;">
                 <a href="manage-room"><button>การจัดการห้อง</button></a>
             </div>

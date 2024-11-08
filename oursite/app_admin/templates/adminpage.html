@@ -8,12 +8,17 @@
 <div class="container">
     <h1 style="font-size: 80px; margin: 0; padding: 0;">จองห้อง</h1>
     <p style="margin-bottom: 30px;">ระบบการจัดการเว็บไซต์ จองห้อง สำหรับผู้ดูแล</p>
-    <form class="form-login">
+    {% if user.is_authenticated %}
+        <p> {{ user.username }}</p>
+    {% else %}
+    <form class="form-login" method="post" action="login">
+        {% csrf_token %}
         <label for="admin-username">ชื่อผู้ใช้</label><br>
-        <input name="admin-username" type="text" placeholder="username" required style="width: 250px;"><br>
+        <input name="username" type="text" placeholder="username" required style="width: 250px;"><br>
         <label for="admin-password">รหัสผ่าน</label><br>
-        <input name="admin-password" type="password" placeholder="password" required style="width: 250px;"><br>
+        <input name="password" type="password" placeholder="password" required style="width: 250px;"><br>
         <button type="submit">เข้าสู่ระบบ</button>
     </form>
+    {% endif %}
 </div>
 {% endblock %}

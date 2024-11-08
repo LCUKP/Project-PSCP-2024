@@ -7,16 +7,22 @@
     <div class="container">
         <h1 class="kanit-regular" style="text-align: left; font-weight: bold;">การจอง</h1>
         <div class="item">
+            {% for i in books %}
             <div class="bookinghis">
                 <div style="display: flex; align-items: center;">
-                    <h1>Peer Tutor1</h1>
+                    {% for room in i.room.all %}
+                        <h1>{{ room.roomname }}</h1>
+                    {% endfor %}
                     <img src="../static/icon/check.png" width="20" height="20" alt="checked">
                 </div>
-                <p>วัน: {{ date }}</p>
-                <p>เวลา: {{ time }}</p>
-                <p>สถานที่: {{ cat.address }}</p>
-                <p>ผู้ดูแล: {{ cat.admin }}</p>
+                <p>วัน: {{ i.datebook }}</p>
+                <p>เวลา: {{ i.timebook }}</p>
+                {% for room in i.room.all %}
+                    <p>สถานที่: {{ room.address }}</p>
+                    <p>ผู้ดูแล: {{ room.admin }}</p>
+                {% endfor %}
             </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

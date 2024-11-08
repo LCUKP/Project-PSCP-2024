@@ -5,14 +5,14 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="kanit-regular" style="font-weight: bold;">Hello, Chotipat!</h1>
+        <h1 class="kanit-regular" style="font-weight: bold;">Hello, {{ user.name }}</h1>
         <div class="item">
             
             <div class="profile-container">
                 
-                <img src="../static/icon/check.png" width="150" height="150" alt="profile image">
-                <h2>User123</h2>
-                <p>Name Lastname</p>
+                <img src="{{ user.img.url }}" width="150" height="150" alt="profile image">
+                <h2>{{ user.username }}</h2>
+                <p>{{ user.name }} {{ user.lastname }}</p>
                 <div style="margin-top: 30px;">
                     <a href="/booking"><button>การจองของคุณ</button></a>
                     <a href="/contact"><button id="reportpfp">รายงานปัญหา</button></a>

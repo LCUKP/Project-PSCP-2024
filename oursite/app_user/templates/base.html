@@ -28,7 +28,7 @@
     <div class="menu">
     {% if user.is_authenticated %}
         <p> {{ user.username }}</p>
-        <form action="{% url 'logout' %}" method="post">
+        <form action="logout" method="post">
             {% csrf_token %}
             <button type="submit" class="logout" onclick="return confirm('ต้องการออกจากระบบใช่หรือไม่')">Log out</button>
         </form>
@@ -36,7 +36,7 @@
             <img id="menu-img" src="{% static '/icon/menu.png' %}" alt="Menu">
         </a>
     {% else %}
-            <a href="users/login/"><button class="login">Log in</button></a>
+            <a href="login"><button class="login">Log in</button></a>
     {% endif %}
     </div>
   </div>

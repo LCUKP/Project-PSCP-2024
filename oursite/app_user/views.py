@@ -1,6 +1,6 @@
 import calendar, datetime
 from pyexpat.errors import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -45,7 +45,9 @@ def booking_view(request) :
         book.user.set([users])
         book.room.set([rooms])
         book.save()
-    return render(request,"booking.html",{"date":date,"time":time,"cat":cat,"room":rooms})
+    userid = request.user.id
+    books = booking.objects.filter(user = userid)
+    return render(request,"booking.html",{"books":books})
 
 def contact(request) :
     admins = admin_acc.objects.all()
@@ -107,8 +109,6 @@ def calendar_view(request) :
     dates = [week for week in month_days]
     return render(request,"forms/calendar.html",{"dates":dates,"month":months_thai[months],"years":years,"months_thai":months_thai,"catid":catid,"roomid":roomid})
 
-def login(request) :
-    pass
 
 def time(request):
     months_thai = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]
@@ -141,17 +141,21 @@ def reservation(request):
 
 def selectroom(request):
     catid = request.GET.get("catid")
-    all_room = room.objects.filter(id = catid)
+    all_room = room.objects.filter(category = catid)
     return render(request,"forms/selectroom.html",{"all_room":all_room})
 
-# def custom_login_view(request):
-#     if request.method == "POST":
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request, user)
-#             return redirect('home')
-#         else:
-#             messages.error(request, "Invalid username or password")
-#     return render(request, 'login.html')
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+        else:
+            return render(request, 'registration/login.html', {'error': 'Invalid credentials'})
+    return render(request, 'registration/login.html')
+
+def user_logout(request):
+    logout(request)  # ล็อกเอาท์ผู้ใช้
+    return redirect('/')

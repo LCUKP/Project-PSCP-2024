@@ -26,17 +26,22 @@
   <div class="nav">
       <a class="brand" href="/"><h3>จองห้อง</h3></a>
       <div class="menu">
-          <a href="/admin/"><button class="login">Log in</button></a>
-          <a href="#" id="menu-icon">
-              <img id="menu-img" src="../static/icon/menu.png" alt="Menu">
-          </a>
+        {% if user.is_authenticated %}
+            <p> {{ user.username }}</p>
+            <a href="/admin/logout"><button class="logout">Log out</button></a>
+            <a href="#" id="menu-icon">
+                <img id="menu-img" src="../static/icon/menu.png" alt="Menu">
+            </a>
+        {% else %}
+            <a href="/admin/"><button class="login">Log in</button></a>
+        {% endif %}
       </div>
   </div>
 </nav> <!--Navbar last line-->
 
 <div class="link" id="nav-links">
   <ul>
-      <a href="/profile"><li>ข้อมูลผู้ดูแล</li></a>
+      <a href="/admin/profile"><li>ข้อมูลผู้ดูแล</li></a>
       <a href="/admin/manage-room"><li>การจัดการห้อง</li></a>
   </ul>
 </div>
