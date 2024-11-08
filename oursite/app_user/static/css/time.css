@@ -105,6 +105,11 @@
     color: #fff;
     background-color: #007bff;
     transition: background-color 0.3s, color 0.3s, border 0.3s;
+    border: 1px solid #007bff;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-size: 20px;
 }
 #time-save:hover{
     background-color: #fff;
