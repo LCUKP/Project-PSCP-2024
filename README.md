@@ -6,7 +6,7 @@
 4. ตรวจให้แน่ใจว่าอยู่ใน path ../Project-PSCP-2024/oursite หากไม่อยู่ใน path นี้ ให้ cd เข้ามาให้ถูกต้อง
 5. เรียก python manage.py runserver ถ้าใช้ Mac ให้เรียก python3 manage.py runserver
 
-path ที่ใช้งาน และ รหัสที่ใช้สำหรับ login
+path ที่ใช้งาน และ รหัสที่ใช้สำหรับ login <br>
 http://localhost:port/admin/    user : admin / password : 12345 <br>
 http://localhost:port/          user : testuser / password : 12345 <br>
 http://localhost:port/adminis/  user : admin / password : Admin12345 (ระบบฐานข้อมูลสามารถแก้ไขได้ทุก Models) <br>
