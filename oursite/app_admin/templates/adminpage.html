@@ -9,7 +9,13 @@
     <h1 style="font-size: 80px; margin: 0; padding: 0;">จองห้อง</h1>
     <p style="margin-bottom: 30px;">ระบบการจัดการเว็บไซต์ จองห้อง สำหรับผู้ดูแล</p>
     {% if user.is_authenticated %}
-        <p> {{ user.username }}</p>
+        <p>Welcome back, <b>{{ user.username }}</b> 🙌</p>
+        <div class="admintitle" style="margin-top: 30px;" >
+            <p style="padding: 0;">Quick Access</p><br>
+            <a href="/admin/manage-room"><button>การจัดการห้อง</button></a>
+            <a href="/admin/profile"><button>ข้อมูลผู้ดูแล</button></a>
+            <a href="history"><button>ประวัติการจอง</button></a>
+        </div>
     {% else %}
     <form class="form-login" method="post" action="login">
         {% csrf_token %}

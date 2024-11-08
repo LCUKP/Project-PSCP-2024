@@ -1,7 +1,5 @@
 .admintitle{
     color: #007bff;
-    display: flex;
-    align-items: center;
 }
 .admintitle h2{
     margin: 25px;

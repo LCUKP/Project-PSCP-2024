@@ -3,11 +3,19 @@
     box-shadow:  0 0 5px 5px #e7e7e7;
     border-radius: 2rem;
     padding: 20px;
+    margin: 20px;
 }
+
 .bookinghis h1{
     padding: 0;
     margin-right: 10px;
 }
+
+@media only screen and (max-width: 768px) { /*Smaller Mobile Size*/
+    .bookinghis:last-child{
+        margin-bottom: 100px;
+    }
+  }
 
 @media only screen and (max-width: 600px) { /*Smaller Mobile Size*/
     .bookinghis{
