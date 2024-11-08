@@ -14,9 +14,9 @@ def admin_manage(request) :
     rooms = room.objects.filter(admin = adminid)
     return render(request,"admin_manager.html",{"cat":cat,"room":rooms})
 def history(request) :
-    adminid = request.user.adminid
-    books = booking.objects.filter(room = adminid)
-    return render(request,"booking_history.html")
+    admin_rooms = room.objects.filter(admin=request.user.adminid)  # ดึงห้องที่สร้างโดย admin ที่กำลังล็อกอิน
+    admin_bookings = booking.objects.filter(room__in=admin_rooms).distinct() 
+    return render(request,"booking_history.html",{"admin_bookings":admin_bookings})
 def form_cat(request) :
     if request.method == "POST" :
         catname = request.POST["catname"]
